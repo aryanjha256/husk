@@ -16,21 +16,14 @@
   font-size: 0.75rem;
   font-weight: 500;
   line-height: 1.4;
-  color: #fff;
-  background: #37352f;
+  color: var(--husk-bg);
+  background: var(--husk-fg);
   border-radius: var(--husk-radius);
   white-space: nowrap;
   pointer-events: none;
   opacity: 0;
   transition: opacity 100ms ease;
   z-index: 100;
-}
-
-@media (prefers-color-scheme: dark) {
-  [data-tooltip]::after {
-    background: #fff;
-    color: #191919;
-  }
 }
 
 [data-tooltip]:hover::after {

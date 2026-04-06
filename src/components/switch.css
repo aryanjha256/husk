@@ -1,0 +1,46 @@
+/* husk | switch.css — Toggle switch from checkbox + data-switch */
+
+input[type="checkbox"][data-switch] {
+  appearance: none;
+  position: relative;
+  width: 2rem;
+  height: 1.125rem;
+  background: var(--husk-border-solid);
+  border-radius: var(--husk-radius-full);
+  cursor: pointer;
+  transition: background var(--husk-ease);
+  flex-shrink: 0;
+  vertical-align: middle;
+  margin: 0;
+}
+
+input[type="checkbox"][data-switch]::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: calc(1.125rem - 4px);
+  height: calc(1.125rem - 4px);
+  background: #fff;
+  border-radius: var(--husk-radius-full);
+  transition: transform var(--husk-ease);
+  box-shadow: rgba(15, 15, 15, 0.15) 0px 1px 2px;
+}
+
+input[type="checkbox"][data-switch]:checked {
+  background: var(--husk-accent);
+}
+
+input[type="checkbox"][data-switch]:checked::before {
+  transform: translateX(calc(2rem - 1.125rem));
+}
+
+input[type="checkbox"][data-switch]:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+input[type="checkbox"][data-switch]:focus-visible {
+  outline: 2px solid var(--husk-accent);
+  outline-offset: 2px;
+}

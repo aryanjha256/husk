@@ -36,22 +36,22 @@
 
 /* Toast types — subtle, not screaming */
 #husk-toasts [role="alert"][data-type="success"] {
-  background: #2b7a6b;
+  background: var(--husk-success-fg);
   color: #fff;
 }
 
 #husk-toasts [role="alert"][data-type="danger"] {
-  background: #c4443c;
+  background: var(--husk-danger-fg);
   color: #fff;
 }
 
 #husk-toasts [role="alert"][data-type="warning"] {
-  background: #9a6c1e;
+  background: var(--husk-warning-fg);
   color: #fff;
 }
 
 #husk-toasts [role="alert"][data-type="info"] {
-  background: #3a7ba8;
+  background: var(--husk-info-fg);
   color: #fff;
 }
 

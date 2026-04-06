@@ -1,0 +1,58 @@
+/* husk | breadcrumb.css — Breadcrumb navigation */
+
+nav[aria-label="breadcrumb"] ol,
+nav[aria-label="Breadcrumb"] ol,
+nav[data-breadcrumb] ol {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 0;
+  font-size: 0.875rem;
+}
+
+nav[aria-label="breadcrumb"] li,
+nav[aria-label="Breadcrumb"] li,
+nav[data-breadcrumb] li {
+  display: flex;
+  align-items: center;
+  color: var(--husk-muted);
+  margin: 0;
+}
+
+nav[aria-label="breadcrumb"] li + li::before,
+nav[aria-label="Breadcrumb"] li + li::before,
+nav[data-breadcrumb] li + li::before {
+  content: "/";
+  margin: 0 6px;
+  color: var(--husk-muted);
+  font-size: 0.8125rem;
+  opacity: 0.6;
+}
+
+nav[aria-label="breadcrumb"] a,
+nav[aria-label="Breadcrumb"] a,
+nav[data-breadcrumb] a {
+  color: var(--husk-muted);
+  text-decoration: none;
+  transition: color var(--husk-ease);
+}
+
+nav[aria-label="breadcrumb"] a:hover,
+nav[aria-label="Breadcrumb"] a:hover,
+nav[data-breadcrumb] a:hover {
+  color: var(--husk-fg);
+}
+
+/* Current page (last item) */
+nav[aria-label="breadcrumb"] li[aria-current="page"],
+nav[aria-label="Breadcrumb"] li[aria-current="page"],
+nav[data-breadcrumb] li[aria-current="page"],
+nav[aria-label="breadcrumb"] li:last-child,
+nav[aria-label="Breadcrumb"] li:last-child,
+nav[data-breadcrumb] li:last-child {
+  color: var(--husk-fg);
+  font-weight: 500;
+}

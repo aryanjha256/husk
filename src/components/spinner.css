@@ -1,0 +1,66 @@
+/* husk | spinner.css — CSS-only loading spinners */
+
+[data-loading] {
+  position: relative;
+  color: transparent !important;
+  pointer-events: none;
+}
+
+[data-loading]::after {
+  content: "";
+  position: absolute;
+  top: calc(50% - 0.5rem);
+  left: calc(50% - 0.5rem);
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid var(--husk-border-solid);
+  border-top-color: var(--husk-accent);
+  border-radius: var(--husk-radius-full);
+  animation: husk-spin 0.5s linear infinite;
+}
+
+/* Size variants */
+[data-loading="sm"]::after {
+  width: 0.75rem;
+  height: 0.75rem;
+  top: calc(50% - 0.375rem);
+  left: calc(50% - 0.375rem);
+}
+
+[data-loading="lg"]::after {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-width: 3px;
+  top: calc(50% - 0.75rem);
+  left: calc(50% - 0.75rem);
+}
+
+/* Standalone spinner element */
+.husk-spinner,
+[data-spinner] {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid var(--husk-border-solid);
+  border-top-color: var(--husk-accent);
+  border-radius: var(--husk-radius-full);
+  animation: husk-spin 0.5s linear infinite;
+  vertical-align: middle;
+}
+
+[data-spinner="sm"] {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+[data-spinner="lg"] {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-width: 3px;
+}
+
+@keyframes husk-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

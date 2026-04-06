@@ -125,30 +125,19 @@ button[type="reset"] {
 
 input[type="reset"]:hover,
 button[type="reset"]:hover {
-  background: rgba(55, 53, 47, 0.08);
+  background: var(--husk-border);
 }
 
 /* ——— Button variants ——— */
 button[data-variant="secondary"],
 [role="button"][data-variant="secondary"] {
-  background: rgba(55, 53, 47, 0.06);
+  background: var(--husk-surface-hover);
   color: var(--husk-fg);
 }
 
 button[data-variant="secondary"]:hover,
 [role="button"][data-variant="secondary"]:hover {
-  background: rgba(55, 53, 47, 0.1);
-}
-
-@media (prefers-color-scheme: dark) {
-  button[data-variant="secondary"],
-  [role="button"][data-variant="secondary"] {
-    background: rgba(255, 255, 255, 0.06);
-  }
-  button[data-variant="secondary"]:hover,
-  [role="button"][data-variant="secondary"]:hover {
-    background: rgba(255, 255, 255, 0.1);
-  }
+  background: var(--husk-border);
 }
 
 button[data-variant="outline"],

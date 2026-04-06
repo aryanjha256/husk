@@ -6,13 +6,13 @@ progress {
   height: 4px;
   border: none;
   border-radius: var(--husk-radius-full);
-  background: rgba(55, 53, 47, 0.08);
+  background: var(--husk-border);
   margin-bottom: 0.5rem;
   overflow: hidden;
 }
 
 progress::-webkit-progress-bar {
-  background: rgba(55, 53, 47, 0.08);
+  background: var(--husk-border);
   border-radius: var(--husk-radius-full);
 }
 
@@ -33,12 +33,12 @@ meter {
   height: 4px;
   border: none;
   border-radius: var(--husk-radius-full);
-  background: rgba(55, 53, 47, 0.08);
+  background: var(--husk-border);
   margin-bottom: 0.5rem;
 }
 
 meter::-webkit-meter-bar {
-  background: rgba(55, 53, 47, 0.08);
+  background: var(--husk-border);
   border-radius: var(--husk-radius-full);
   border: none;
 }

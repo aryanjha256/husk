@@ -15,3 +15,8 @@
 @import "./components/progress.css";
 @import "./components/tooltip.css";
 @import "./components/alert.css";
+@import "./components/switch.css";
+@import "./components/skeleton.css";
+@import "./components/sidebar.css";
+@import "./components/spinner.css";
+@import "./components/breadcrumb.css";

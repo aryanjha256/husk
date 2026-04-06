@@ -207,12 +207,7 @@ kbd {
   white-space: nowrap;
 }
 
-/* ——— Highlighted / mark ——— */
-mark {
-  background: rgba(255, 212, 0, 0.14);
-  color: var(--husk-fg);
-  padding: 0.08em 0;
-}
+/* mark is styled as badges in components/badge.css */
 
 /* ——— Horizontal rule ——— */
 hr {

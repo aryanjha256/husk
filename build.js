@@ -29,6 +29,11 @@ const CSS_FILES = [
     'components/progress.css',
     'components/tooltip.css',
     'components/alert.css',
+    'components/switch.css',
+    'components/skeleton.css',
+    'components/sidebar.css',
+    'components/spinner.css',
+    'components/breadcrumb.css',
 ];
 
 // JS files in load order
