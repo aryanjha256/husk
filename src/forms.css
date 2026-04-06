@@ -1,0 +1,297 @@
+/* husk | forms.css — Clean, Notion-inspired inputs & buttons */
+
+/* ——— Shared input styles ——— */
+input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not(
+    [type="color"]
+  ):not([type="file"]),
+select,
+textarea {
+  font-family: inherit;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--husk-fg);
+  background: var(--husk-bg);
+  border: 1px solid var(--husk-border-solid);
+  border-radius: var(--husk-radius);
+  padding: 6px 10px;
+  width: 100%;
+  transition:
+    border-color var(--husk-ease),
+    box-shadow var(--husk-ease);
+}
+
+input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not(
+    [type="color"]
+  ):not([type="file"]):hover,
+select:hover,
+textarea:hover {
+  border-color: var(--husk-muted);
+}
+
+input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not(
+    [type="color"]
+  ):not([type="file"]):focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--husk-accent);
+  box-shadow: 0 0 0 1px var(--husk-accent);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--husk-muted);
+  opacity: 1;
+}
+
+input:disabled,
+select:disabled,
+textarea:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ——— Textarea ——— */
+textarea {
+  min-height: 5rem;
+  resize: vertical;
+}
+
+/* ——— Select ——— */
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath fill='none' stroke='%23787774' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' d='M1 1l4 4 4-4'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  padding-right: 2rem;
+  cursor: pointer;
+}
+
+/* ——— Buttons ——— */
+button,
+input[type="submit"],
+input[type="button"],
+[role="button"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #fff;
+  background: var(--husk-accent);
+  border: none;
+  border-radius: var(--husk-radius);
+  padding: 6px 12px;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  user-select: none;
+  transition:
+    background var(--husk-ease),
+    opacity var(--husk-ease);
+  height: 32px;
+}
+
+button:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover,
+[role="button"]:hover {
+  background: var(--husk-accent-hover);
+}
+
+button:active,
+input[type="submit"]:active,
+input[type="button"]:active,
+[role="button"]:active {
+  opacity: 0.85;
+}
+
+button:disabled,
+input[type="submit"]:disabled,
+input[type="button"]:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* Reset button → ghost style */
+input[type="reset"],
+button[type="reset"] {
+  background: var(--husk-surface-hover);
+  color: var(--husk-fg);
+}
+
+input[type="reset"]:hover,
+button[type="reset"]:hover {
+  background: rgba(55, 53, 47, 0.08);
+}
+
+/* ——— Button variants ——— */
+button[data-variant="secondary"],
+[role="button"][data-variant="secondary"] {
+  background: rgba(55, 53, 47, 0.06);
+  color: var(--husk-fg);
+}
+
+button[data-variant="secondary"]:hover,
+[role="button"][data-variant="secondary"]:hover {
+  background: rgba(55, 53, 47, 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+  button[data-variant="secondary"],
+  [role="button"][data-variant="secondary"] {
+    background: rgba(255, 255, 255, 0.06);
+  }
+  button[data-variant="secondary"]:hover,
+  [role="button"][data-variant="secondary"]:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+}
+
+button[data-variant="outline"],
+[role="button"][data-variant="outline"] {
+  background: transparent;
+  color: var(--husk-accent);
+  box-shadow: inset 0 0 0 1px var(--husk-accent);
+}
+
+button[data-variant="outline"]:hover,
+[role="button"][data-variant="outline"]:hover {
+  background: rgba(46, 170, 220, 0.06);
+}
+
+button[data-variant="ghost"],
+[role="button"][data-variant="ghost"] {
+  background: transparent;
+  color: var(--husk-muted);
+}
+
+button[data-variant="ghost"]:hover,
+[role="button"][data-variant="ghost"]:hover {
+  background: var(--husk-surface-hover);
+  color: var(--husk-fg);
+}
+
+button[data-variant="danger"],
+[role="button"][data-variant="danger"] {
+  background: var(--husk-danger);
+  color: #fff;
+}
+
+button[data-variant="danger"]:hover,
+[role="button"][data-variant="danger"]:hover {
+  background: var(--husk-danger-fg);
+}
+
+/* ——— Sizes ——— */
+button[data-size="sm"],
+[role="button"][data-size="sm"] {
+  font-size: 0.8125rem;
+  padding: 3px 8px;
+  height: 26px;
+}
+
+button[data-size="lg"],
+[role="button"][data-size="lg"] {
+  font-size: 0.9375rem;
+  padding: 8px 16px;
+  height: 38px;
+}
+
+/* ——— Checkbox & Radio ——— */
+input[type="checkbox"],
+input[type="radio"] {
+  accent-color: var(--husk-accent);
+  width: 1rem;
+  height: 1rem;
+  cursor: pointer;
+  vertical-align: middle;
+  margin-right: 0.25rem;
+}
+
+/* ——— Range ——— */
+input[type="range"] {
+  accent-color: var(--husk-accent);
+  width: 100%;
+  cursor: pointer;
+}
+
+/* ——— Color ——— */
+input[type="color"] {
+  width: 2.25rem;
+  height: 2rem;
+  padding: 2px;
+  border: 1px solid var(--husk-border-solid);
+  border-radius: var(--husk-radius);
+  cursor: pointer;
+  background: var(--husk-bg);
+}
+
+/* ——— File ——— */
+input[type="file"] {
+  font-family: inherit;
+  font-size: 0.8125rem;
+  color: var(--husk-muted);
+}
+
+input[type="file"]::file-selector-button {
+  font-family: inherit;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--husk-fg);
+  background: var(--husk-surface);
+  border: 1px solid var(--husk-border-solid);
+  border-radius: var(--husk-radius);
+  padding: 4px 8px;
+  margin-right: 0.5rem;
+  cursor: pointer;
+  transition: background var(--husk-ease);
+}
+
+input[type="file"]::file-selector-button:hover {
+  background: rgba(55, 53, 47, 0.06);
+}
+
+/* ——— Label ——— */
+label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 4px;
+  color: var(--husk-fg);
+}
+
+/* Inline labels (checkboxes / radios) */
+label:has(input[type="checkbox"]),
+label:has(input[type="radio"]) {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 400;
+  font-size: 0.9375rem;
+  cursor: pointer;
+  margin-bottom: 0;
+  gap: 2px;
+}
+
+/* ——— Fieldset & Legend ——— */
+fieldset {
+  border: 1px solid var(--husk-border);
+  border-radius: var(--husk-radius);
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+legend {
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 0 6px;
+  color: var(--husk-muted);
+}
+
+/* ——— Form spacing helper ——— */
+form > * + * {
+  margin-top: 0.75rem;
+}

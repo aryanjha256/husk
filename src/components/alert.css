@@ -1,0 +1,87 @@
+/* husk | alert.css — Callout boxes using role="alert" or data-alert */
+
+[role="alert"],
+[data-alert] {
+  padding: 12px 14px;
+  border-radius: var(--husk-radius);
+  background: var(--husk-info-bg);
+  color: var(--husk-fg);
+  font-size: 0.9375rem;
+  margin-bottom: 0.75rem;
+  border: none;
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+/* Emoji/icon slot before content */
+[role="alert"]::before,
+[data-alert]::before {
+  content: "ℹ️";
+  flex-shrink: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+[role="alert"] > :first-child,
+[data-alert] > :first-child {
+  margin-top: 0;
+}
+
+[role="alert"] > :last-child,
+[data-alert] > :last-child {
+  margin-bottom: 0;
+}
+
+[role="alert"] > strong,
+[data-alert] > strong {
+  display: block;
+  margin-bottom: 2px;
+  font-size: 0.875rem;
+}
+
+/* ——— Variants ——— */
+[role="alert"][data-type="success"],
+[data-alert="success"] {
+  background: var(--husk-success-bg);
+}
+[role="alert"][data-type="success"]::before,
+[data-alert="success"]::before {
+  content: "✅";
+}
+
+[role="alert"][data-type="warning"],
+[data-alert="warning"] {
+  background: var(--husk-warning-bg);
+}
+[role="alert"][data-type="warning"]::before,
+[data-alert="warning"]::before {
+  content: "⚠️";
+}
+
+[role="alert"][data-type="danger"],
+[data-alert="danger"] {
+  background: var(--husk-danger-bg);
+}
+[role="alert"][data-type="danger"]::before,
+[data-alert="danger"]::before {
+  content: "🚨";
+}
+
+[role="alert"][data-type="info"],
+[data-alert="info"] {
+  background: var(--husk-info-bg);
+}
+[role="alert"][data-type="info"]::before,
+[data-alert="info"]::before {
+  content: "ℹ️";
+}
+
+[role="alert"][data-type="neutral"],
+[data-alert="neutral"] {
+  background: var(--husk-surface);
+}
+[role="alert"][data-type="neutral"]::before,
+[data-alert="neutral"]::before {
+  content: "💡";
+}

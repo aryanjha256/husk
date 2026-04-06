@@ -1,0 +1,38 @@
+/* husk | badge.css — Notion-style badges using <mark> */
+
+mark {
+  display: inline-block;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  line-height: 1.2;
+  padding: 2px 6px;
+  border-radius: var(--husk-radius-sm);
+  background: rgba(206, 205, 202, 0.3);
+  color: var(--husk-fg);
+  vertical-align: baseline;
+}
+
+mark[data-type="success"] {
+  background: var(--husk-success-bg);
+  color: var(--husk-success-fg);
+}
+
+mark[data-type="warning"] {
+  background: var(--husk-warning-bg);
+  color: var(--husk-warning-fg);
+}
+
+mark[data-type="danger"] {
+  background: var(--husk-danger-bg);
+  color: var(--husk-danger-fg);
+}
+
+mark[data-type="info"] {
+  background: var(--husk-info-bg);
+  color: var(--husk-info-fg);
+}
+
+mark[data-type="neutral"] {
+  background: rgba(206, 205, 202, 0.3);
+  color: var(--husk-muted);
+}

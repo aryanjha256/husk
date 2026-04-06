@@ -1,0 +1,59 @@
+/* husk | progress.css — <progress> and <meter> */
+
+progress {
+  appearance: none;
+  width: 100%;
+  height: 4px;
+  border: none;
+  border-radius: var(--husk-radius-full);
+  background: rgba(55, 53, 47, 0.08);
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+}
+
+progress::-webkit-progress-bar {
+  background: rgba(55, 53, 47, 0.08);
+  border-radius: var(--husk-radius-full);
+}
+
+progress::-webkit-progress-value {
+  background: var(--husk-accent);
+  border-radius: var(--husk-radius-full);
+}
+
+progress::-moz-progress-bar {
+  background: var(--husk-accent);
+  border-radius: var(--husk-radius-full);
+}
+
+/* Meter */
+meter {
+  appearance: none;
+  width: 100%;
+  height: 4px;
+  border: none;
+  border-radius: var(--husk-radius-full);
+  background: rgba(55, 53, 47, 0.08);
+  margin-bottom: 0.5rem;
+}
+
+meter::-webkit-meter-bar {
+  background: rgba(55, 53, 47, 0.08);
+  border-radius: var(--husk-radius-full);
+  border: none;
+}
+
+meter::-webkit-meter-optimum-value {
+  background: var(--husk-success);
+  border-radius: var(--husk-radius-full);
+}
+
+meter::-webkit-meter-suboptimum-value {
+  background: var(--husk-warning);
+  border-radius: var(--husk-radius-full);
+}
+
+meter::-webkit-meter-even-less-good-value {
+  background: var(--husk-danger);
+  border-radius: var(--husk-radius-full);
+}

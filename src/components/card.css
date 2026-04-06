@@ -1,0 +1,63 @@
+/* husk | card.css — <article> as card */
+
+article {
+  background: var(--husk-bg);
+  border: 1px solid var(--husk-border);
+  border-radius: var(--husk-radius-lg);
+  padding: 1.25rem;
+  margin-bottom: 0.75rem;
+  transition: background var(--husk-ease);
+}
+
+article:hover {
+  background: var(--husk-surface-hover);
+}
+
+/* Card sections */
+article > header {
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.625rem;
+  border-bottom: 1px solid var(--husk-border);
+}
+
+article > header :last-child {
+  margin-bottom: 0;
+}
+
+article > footer {
+  margin-top: 0.75rem;
+  padding-top: 0.625rem;
+  border-top: 1px solid var(--husk-border);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Nested headings inside cards */
+article h1,
+article h2,
+article h3,
+article h4,
+article h5,
+article h6 {
+  margin-top: 0;
+}
+
+/* Last paragraph in card: no bottom margin */
+article > p:last-child,
+article > :last-child p:last-child {
+  margin-bottom: 0;
+}
+
+/* Card grid */
+[role="feed"],
+[data-cards] {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr));
+  gap: 0.75rem;
+}
+
+[role="feed"] article,
+[data-cards] article {
+  margin-bottom: 0;
+}

@@ -1,0 +1,147 @@
+/* husk | details.css — <details>/<summary> as accordion & dropdown */
+
+details {
+  border: none;
+  border-radius: var(--husk-radius);
+  margin-bottom: 0;
+  background: var(--husk-bg);
+}
+
+summary {
+  font-weight: 500;
+  font-size: 0.9375rem;
+  padding: 8px 4px;
+  cursor: pointer;
+  user-select: none;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: background var(--husk-ease);
+  border-radius: var(--husk-radius);
+  color: var(--husk-fg);
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Triangle icon (Notion-style) */
+summary::before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 5px solid var(--husk-muted);
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  flex-shrink: 0;
+  transition: transform 120ms ease;
+  margin-right: 2px;
+}
+
+details[open] > summary::before {
+  transform: rotate(90deg);
+}
+
+summary:hover {
+  background: var(--husk-surface-hover);
+}
+
+details[open] > summary {
+  border-radius: var(--husk-radius);
+}
+
+/* Content area */
+details > :not(summary) {
+  padding: 2px 0 4px 22px;
+}
+
+details > p:last-child,
+details > div:last-child p:last-child {
+  margin-bottom: 0;
+}
+
+/* ——— Accordion group: bordered variant ——— */
+details[data-bordered] {
+  border: 1px solid var(--husk-border);
+  padding: 0 8px;
+}
+
+details[data-bordered] + details[data-bordered] {
+  border-top: none;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+details[data-bordered]:has(+ details[data-bordered]) {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  margin-bottom: 0;
+}
+
+/* ——— Dropdown variant ——— */
+details[data-dropdown] {
+  position: relative;
+  display: inline-block;
+  border: none;
+  margin-bottom: 0;
+  background: none;
+}
+
+details[data-dropdown] > summary {
+  border: none;
+  border-radius: var(--husk-radius);
+  background: rgba(55, 53, 47, 0.06);
+  padding: 4px 10px;
+  font-size: 0.875rem;
+}
+
+details[data-dropdown] > summary::before {
+  display: none;
+}
+
+details[data-dropdown][open] > summary {
+  background: rgba(55, 53, 47, 0.1);
+}
+
+details[data-dropdown] > ul,
+details[data-dropdown] > menu {
+  position: absolute;
+  z-index: 50;
+  top: calc(100% + 4px);
+  left: 0;
+  min-width: 10rem;
+  background: var(--husk-bg);
+  border-radius: var(--husk-radius-lg);
+  box-shadow: var(--husk-shadow-md);
+  list-style: none;
+  padding: 4px;
+  margin: 0;
+}
+
+details[data-dropdown] li {
+  margin: 0;
+}
+
+details[data-dropdown] a,
+details[data-dropdown] button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 5px 10px;
+  color: var(--husk-fg);
+  text-decoration: none;
+  font-size: 0.875rem;
+  background: none;
+  border: none;
+  border-radius: var(--husk-radius);
+  cursor: pointer;
+  transition: background var(--husk-ease);
+  height: auto;
+}
+
+details[data-dropdown] a:hover,
+details[data-dropdown] button:hover {
+  background: var(--husk-surface-hover);
+  color: var(--husk-fg);
+}

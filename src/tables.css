@@ -1,0 +1,59 @@
+/* husk | tables.css — Minimal, clean tables */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 0.75rem;
+  font-size: 0.9375rem;
+  text-align: left;
+}
+
+thead {
+  border-bottom: 1px solid var(--husk-border-solid);
+}
+
+th {
+  font-weight: 500;
+  padding: 6px 10px;
+  color: var(--husk-muted);
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+td {
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--husk-border);
+  color: var(--husk-fg);
+}
+
+tbody tr:hover {
+  background: var(--husk-surface-hover);
+}
+
+/* Table footer */
+tfoot {
+  border-top: 1px solid var(--husk-border-solid);
+}
+
+tfoot td {
+  padding: 8px 10px;
+  border-bottom: none;
+  font-weight: 600;
+}
+
+/* Caption */
+caption {
+  caption-side: bottom;
+  padding: 8px 0;
+  font-size: 0.8125rem;
+  color: var(--husk-muted);
+  text-align: left;
+}
+
+/* Responsive */
+table {
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}

@@ -1,0 +1,66 @@
+/* husk | toast.css — Toast notification styles */
+
+#husk-toasts {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 6px;
+  pointer-events: none;
+  max-width: min(20rem, calc(100vw - 2rem));
+}
+
+#husk-toasts [role="alert"] {
+  font-family: var(--husk-font);
+  font-size: 0.875rem;
+  line-height: 1.4;
+  padding: 8px 12px;
+  background: var(--husk-fg);
+  color: var(--husk-bg);
+  border-radius: var(--husk-radius-lg);
+  box-shadow: var(--husk-shadow-md);
+  pointer-events: all;
+  transform: translateY(8px);
+  opacity: 0;
+  transition:
+    transform 200ms ease-out,
+    opacity 200ms ease-out;
+}
+
+#husk-toasts [role="alert"].husk-toast-show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Toast types — subtle, not screaming */
+#husk-toasts [role="alert"][data-type="success"] {
+  background: #2b7a6b;
+  color: #fff;
+}
+
+#husk-toasts [role="alert"][data-type="danger"] {
+  background: #c4443c;
+  color: #fff;
+}
+
+#husk-toasts [role="alert"][data-type="warning"] {
+  background: #9a6c1e;
+  color: #fff;
+}
+
+#husk-toasts [role="alert"][data-type="info"] {
+  background: #3a7ba8;
+  color: #fff;
+}
+
+/* Responsive: bottom-center on mobile */
+@media (max-width: 30rem) {
+  #husk-toasts {
+    right: 1rem;
+    left: 1rem;
+    align-items: stretch;
+    max-width: none;
+  }
+}

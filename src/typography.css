@@ -1,0 +1,259 @@
+/* husk | typography.css — Warm, tight, editorial type system */
+
+/* ——— Headings ——— */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.2;
+  font-weight: 600;
+  color: var(--husk-fg);
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.03em;
+}
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.375rem;
+  letter-spacing: -0.01em;
+}
+h4 {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+h5 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+h6 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: var(--husk-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Spacing when headings follow content */
+* + h1 {
+  margin-top: 2.5rem;
+}
+* + h2 {
+  margin-top: 2rem;
+}
+* + h3 {
+  margin-top: 1.5rem;
+}
+* + h4,
+* + h5,
+* + h6 {
+  margin-top: 1.25rem;
+}
+
+/* ——— Paragraphs ——— */
+p {
+  margin-bottom: 0.75rem;
+  max-width: 65ch;
+  color: var(--husk-fg);
+}
+
+/* ——— Links ——— */
+a {
+  color: var(--husk-fg);
+  text-decoration: underline;
+  text-decoration-color: rgba(55, 53, 47, 0.25);
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+  transition: text-decoration-color var(--husk-ease);
+}
+
+a:hover {
+  text-decoration-color: var(--husk-fg);
+}
+
+@media (prefers-color-scheme: dark) {
+  a {
+    text-decoration-color: rgba(255, 255, 255, 0.2);
+  }
+  a:hover {
+    text-decoration-color: rgba(255, 255, 255, 0.6);
+  }
+}
+
+/* ——— Lists ——— */
+ul,
+ol {
+  margin-bottom: 0.75rem;
+  padding-left: 1.625rem;
+}
+
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+  margin-bottom: 0;
+  margin-top: 0.125rem;
+}
+
+li {
+  margin-bottom: 0.125rem;
+}
+
+li::marker {
+  color: var(--husk-muted);
+}
+
+/* Description lists */
+dl {
+  margin-bottom: 0.75rem;
+}
+
+dt {
+  font-weight: 600;
+  margin-top: 0.625rem;
+  font-size: 0.9375rem;
+}
+
+dd {
+  margin-left: 0;
+  color: var(--husk-muted);
+  font-size: 0.9375rem;
+}
+
+/* ——— Blockquote ——— */
+blockquote {
+  border-left: 3px solid var(--husk-fg);
+  padding: 0.25rem 0 0.25rem 1rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.0625rem;
+}
+
+blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+blockquote cite {
+  display: block;
+  margin-top: 0.375rem;
+  font-size: 0.875rem;
+  color: var(--husk-muted);
+  font-style: normal;
+}
+
+blockquote cite::before {
+  content: "— ";
+}
+
+/* ——— Inline code ——— */
+code {
+  font-family: var(--husk-font-mono);
+  font-size: 0.85em;
+  background: rgba(135, 131, 120, 0.12);
+  padding: 0.125em 0.35em;
+  border-radius: var(--husk-radius-sm);
+  color: #eb5757;
+}
+
+@media (prefers-color-scheme: dark) {
+  code {
+    background: rgba(135, 131, 120, 0.2);
+    color: #f08080;
+  }
+}
+
+/* ——— Code blocks ——— */
+pre {
+  font-family: var(--husk-font-mono);
+  font-size: 0.875rem;
+  line-height: 1.6;
+  background: var(--husk-surface);
+  border-radius: var(--husk-radius);
+  padding: 1rem 1.125rem;
+  margin-bottom: 0.75rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+pre code {
+  background: none;
+  padding: 0;
+  color: inherit;
+  font-size: inherit;
+}
+
+/* ——— Keyboard ——— */
+kbd {
+  font-family: var(--husk-font-mono);
+  font-size: 0.8em;
+  padding: 2px 6px;
+  background: var(--husk-surface);
+  border: 1px solid var(--husk-border-solid);
+  border-bottom-width: 2px;
+  border-radius: var(--husk-radius-sm);
+  white-space: nowrap;
+}
+
+/* ——— Highlighted / mark ——— */
+mark {
+  background: rgba(255, 212, 0, 0.14);
+  color: var(--husk-fg);
+  padding: 0.08em 0;
+}
+
+/* ——— Horizontal rule ——— */
+hr {
+  border: none;
+  border-top: 1px solid var(--husk-border);
+  margin: 1.5rem 0;
+}
+
+/* ——— Small text ——— */
+small {
+  font-size: 0.8125rem;
+  color: var(--husk-muted);
+}
+
+/* ——— Abbreviation ——— */
+abbr[title] {
+  text-decoration: underline dotted;
+  cursor: help;
+}
+
+/* ——— Figure ——— */
+figure {
+  margin-bottom: 0.75rem;
+}
+
+figcaption {
+  font-size: 0.8125rem;
+  color: var(--husk-muted);
+  margin-top: 0.5rem;
+}
+
+/* ——— Address ——— */
+address {
+  font-style: normal;
+  margin-bottom: 0.75rem;
+  color: var(--husk-muted);
+  font-size: 0.9375rem;
+}
+
+/* ——— Superscript / Subscript ——— */
+sup,
+sub {
+  font-size: 0.75em;
+}

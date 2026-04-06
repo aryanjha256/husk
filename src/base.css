@@ -1,0 +1,189 @@
+/* husk | base.css — Reset, design tokens & foundational styles */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* ——— Colors: warm Notion-inspired palette ——— */
+  --husk-bg: #ffffff;
+  --husk-fg: #37352f;
+  --husk-muted: #787774;
+  --husk-border: rgba(55, 53, 47, 0.09);
+  --husk-border-solid: #e9e9e7;
+  --husk-accent: #2eaadc;
+  --husk-accent-hover: #2496c4;
+  --husk-accent-text: #ffffff;
+  --husk-success: #4dab9a;
+  --husk-success-bg: rgba(77, 171, 154, 0.08);
+  --husk-success-fg: #2b7a6b;
+  --husk-warning: #cb912f;
+  --husk-warning-bg: rgba(203, 145, 47, 0.08);
+  --husk-warning-fg: #9a6c1e;
+  --husk-danger: #e16259;
+  --husk-danger-bg: rgba(225, 98, 89, 0.08);
+  --husk-danger-fg: #c4443c;
+  --husk-info: #529cca;
+  --husk-info-bg: rgba(82, 156, 202, 0.08);
+  --husk-info-fg: #3a7ba8;
+  --husk-surface: #f7f6f3;
+  --husk-surface-hover: rgba(55, 53, 47, 0.04);
+
+  /* ——— Typography ——— */
+  --husk-font:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
+    "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji";
+  --husk-font-mono:
+    "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier,
+    monospace;
+  --husk-leading: 1.5;
+  --husk-font-size: 16px;
+
+  /* ——— Shape ——— */
+  --husk-radius: 4px;
+  --husk-radius-sm: 3px;
+  --husk-radius-lg: 6px;
+  --husk-radius-full: 9999px;
+
+  /* ——— Shadows: subtle, warm ——— */
+  --husk-shadow-sm: rgba(15, 15, 15, 0.04) 0px 1px 2px;
+  --husk-shadow:
+    rgba(15, 15, 15, 0.05) 0px 1px 3px, rgba(15, 15, 15, 0.1) 0px 1px 2px;
+  --husk-shadow-md:
+    rgba(15, 15, 15, 0.05) 0px 0px 0px 1px, rgba(15, 15, 15, 0.1) 0px 3px 6px,
+    rgba(15, 15, 15, 0.2) 0px 9px 24px;
+  --husk-shadow-lg:
+    rgba(15, 15, 15, 0.05) 0px 0px 0px 1px, rgba(15, 15, 15, 0.1) 0px 5px 10px,
+    rgba(15, 15, 15, 0.2) 0px 15px 40px;
+
+  /* ——— Motion ——— */
+  --husk-ease: 120ms ease-out;
+
+  color-scheme: light dark;
+}
+
+/* ——— Dark mode ——— */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --husk-bg: #191919;
+    --husk-fg: #ffffffcf;
+    --husk-muted: #ffffff5e;
+    --husk-border: rgba(255, 255, 255, 0.07);
+    --husk-border-solid: #2f2f2f;
+    --husk-surface: #ffffff08;
+    --husk-surface-hover: rgba(255, 255, 255, 0.04);
+    --husk-accent: #529cca;
+    --husk-accent-hover: #68aed4;
+    --husk-accent-text: #191919;
+    --husk-success-bg: rgba(77, 171, 154, 0.12);
+    --husk-success-fg: #6bc5b5;
+    --husk-warning-bg: rgba(203, 145, 47, 0.12);
+    --husk-warning-fg: #dfb564;
+    --husk-danger-bg: rgba(225, 98, 89, 0.12);
+    --husk-danger-fg: #e98a84;
+    --husk-info-bg: rgba(82, 156, 202, 0.12);
+    --husk-info-fg: #7db8da;
+    --husk-shadow-sm: rgba(0, 0, 0, 0.2) 0px 1px 2px;
+    --husk-shadow:
+      rgba(0, 0, 0, 0.2) 0px 1px 3px, rgba(0, 0, 0, 0.4) 0px 1px 2px;
+    --husk-shadow-md:
+      rgba(255, 255, 255, 0.06) 0px 0px 0px 1px, rgba(0, 0, 0, 0.3) 0px 3px 6px,
+      rgba(0, 0, 0, 0.5) 0px 9px 24px;
+    --husk-shadow-lg:
+      rgba(255, 255, 255, 0.06) 0px 0px 0px 1px,
+      rgba(0, 0, 0, 0.3) 0px 5px 10px, rgba(0, 0, 0, 0.5) 0px 15px 40px;
+  }
+}
+
+/* ——— Document ——— */
+html {
+  -webkit-text-size-adjust: 100%;
+  -moz-tab-size: 4;
+  tab-size: 4;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--husk-font);
+  font-size: var(--husk-font-size);
+  line-height: var(--husk-leading);
+  color: var(--husk-fg);
+  background-color: var(--husk-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100dvh;
+}
+
+/* ——— Content container ——— */
+main {
+  max-width: 56rem;
+  margin-inline: auto;
+  padding: 2.5rem 2rem;
+}
+
+section {
+  padding-block: 2.5rem;
+}
+
+section + section {
+  border-top: 1px solid var(--husk-border);
+}
+
+/* ——— Media ——— */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ——— Selection ——— */
+::selection {
+  background-color: var(--husk-accent);
+  color: var(--husk-accent-text);
+}
+
+/* ——— Scrollbar (barely there) ——— */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--husk-border-solid);
+  border-radius: var(--husk-radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--husk-muted);
+}
+
+/* ——— Focus visible ——— */
+:focus-visible {
+  outline: 2px solid var(--husk-accent);
+  outline-offset: 1px;
+  border-radius: var(--husk-radius-sm);
+}
+
+/* ——— Reduced motion ——— */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "name": "husk-ui",
+  "version": "0.1.0",
+  "description": "Write HTML. Ship design. Ultra-lightweight UI library that styles semantic HTML.",
+  "main": "src/js/husk.js",
+  "style": "src/husk.css",
+  "files": [
+    "src/",
+    "dist/"
+  ],
+  "exports": {
+    ".": {
+      "style": "./src/husk.css",
+      "default": "./src/js/husk.js"
+    },
+    "./css": "./src/husk.css",
+    "./css/*": "./src/*.css",
+    "./css/components/*": "./src/components/*.css",
+    "./js": "./src/js/husk.js",
+    "./js/*": "./src/js/*.js"
+  },
+  "scripts": {
+    "build": "node build.js"
+  },
+  "keywords": [
+    "css",
+    "ui",
+    "semantic-html",
+    "classless",
+    "lightweight",
+    "zero-dependency",
+    "components",
+    "design",
+    "framework"
+  ],
+  "author": "aryanjha256",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aryanjha256/husk"
+  }
+}

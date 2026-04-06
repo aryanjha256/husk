@@ -1,0 +1,131 @@
+/* husk | nav.css — <nav> as navigation bar */
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 8px 16px;
+  background: var(--husk-bg);
+  border-bottom: 1px solid var(--husk-border);
+  font-size: 0.875rem;
+}
+
+/* Logo / brand link */
+nav > a:first-child,
+nav > strong:first-child {
+  font-weight: 600;
+  font-size: 0.9375rem;
+  color: var(--husk-fg);
+  text-decoration: none;
+  white-space: nowrap;
+  letter-spacing: -0.01em;
+}
+
+nav > a:first-child:hover {
+  opacity: 0.7;
+}
+
+/* Nav links list */
+nav ul,
+nav menu {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  margin: 0;
+}
+
+nav ul a,
+nav menu a {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 8px;
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--husk-muted);
+  text-decoration: none;
+  border-radius: var(--husk-radius);
+  transition:
+    background var(--husk-ease),
+    color var(--husk-ease);
+}
+
+nav ul a:hover,
+nav menu a:hover {
+  color: var(--husk-fg);
+  background: var(--husk-surface-hover);
+}
+
+/* Active nav link */
+nav ul a[aria-current],
+nav ul a[aria-current="page"],
+nav menu a[aria-current],
+nav menu a[aria-current="page"] {
+  color: var(--husk-fg);
+  font-weight: 500;
+  background: var(--husk-surface-hover);
+}
+
+/* Nav buttons */
+nav button,
+nav [role="button"] {
+  font-size: 0.8125rem;
+  padding: 3px 8px;
+  height: 26px;
+}
+
+/* ——— Vertical nav (inside aside) ——— */
+aside nav {
+  flex-direction: column;
+  align-items: stretch;
+  border-bottom: none;
+  border-right: none;
+  padding: 8px 0;
+  gap: 0;
+}
+
+aside nav ul,
+aside nav menu {
+  flex-direction: column;
+  gap: 1px;
+}
+
+aside nav ul a,
+aside nav menu a {
+  width: 100%;
+  padding: 5px 10px;
+  border-radius: var(--husk-radius);
+}
+
+aside nav ul a:hover,
+aside nav menu a:hover {
+  background: var(--husk-surface-hover);
+}
+
+aside nav ul a[aria-current],
+aside nav ul a[aria-current="page"] {
+  color: var(--husk-fg);
+  background: var(--husk-surface-hover);
+  font-weight: 500;
+}
+
+/* ——— Responsive ——— */
+@media (max-width: 48rem) {
+  nav {
+    flex-wrap: wrap;
+  }
+
+  nav ul,
+  nav menu {
+    flex-basis: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 0;
+  }
+}
