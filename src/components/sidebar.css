@@ -25,6 +25,14 @@
   overflow-y: auto;
 }
 
+/* Reset navbar styles inside sidebar */
+[data-sidebar] > aside nav {
+  display: block;
+  padding: 0;
+  background: none;
+  border-bottom: none;
+}
+
 /* Sidebar nav */
 [data-sidebar] > aside nav a {
   display: block;
