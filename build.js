@@ -79,7 +79,7 @@ fs.writeFileSync(path.join(DIST, 'husk.min.css'), cssMin);
 
 // JS bundle
 let js = `/*! husk v${PKG.version} | MIT License */\n`;
-js += '(function(){\n"use strict";\n\n';
+js += '(function(root){\n"use strict";\n\n';
 for (const file of JS_FILES) {
     const src = read(file)
         // Remove each file's own IIFE wrapper to avoid double-wrapping
@@ -87,7 +87,7 @@ for (const file of JS_FILES) {
         .replace(/\}\)\(typeof window[\s\S]*$/, '');
     js += `// --- ${file} ---\n${src}\n`;
 }
-js += '})()\n';
+js += '})(typeof window !== "undefined" ? window : this)\n';
 fs.writeFileSync(path.join(DIST, 'husk.js'), js);
 
 // Report

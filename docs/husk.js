@@ -1,5 +1,5 @@
 /*! husk v0.1.0 | MIT License */
-(function(){
+(function(root){
 "use strict";
 
 // --- js/toast.js ---
@@ -129,4 +129,4 @@ var Husk = root.Husk || (root.Husk = {});
         Husk.dialog.init();
     }
 
-})()
+})(typeof window !== "undefined" ? window : this)
