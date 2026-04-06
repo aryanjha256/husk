@@ -95,4 +95,16 @@ console.log(`\n  husk v${PKG.version} built successfully\n`);
 console.log(`  dist/husk.css      ${sizeKB(css)} KB`);
 console.log(`  dist/husk.min.css  ${sizeKB(cssMin)} KB`);
 console.log(`  dist/husk.js       ${sizeKB(js)} KB`);
+
+// Copy to docs/ for GitHub Pages
+const DOCS = path.join(ROOT, 'docs');
+if (fs.existsSync(DOCS)) {
+    fs.copyFileSync(path.join(DIST, 'husk.min.css'), path.join(DOCS, 'husk.css'));
+    fs.copyFileSync(path.join(DIST, 'husk.js'), path.join(DOCS, 'husk.js'));
+    const mascot = path.join(ROOT, 'assets', 'mascot.png');
+    if (fs.existsSync(mascot)) {
+        fs.copyFileSync(mascot, path.join(DOCS, 'mascot.png'));
+    }
+    console.log('  docs/ assets synced');
+}
 console.log('');
