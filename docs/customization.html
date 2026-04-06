@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customization — husk</title>
+    <link rel="icon" type="image/png" href="../assets/mascot.png">
+    <link rel="stylesheet" href="../src/husk.css">
+    <link rel="stylesheet" href="docs.css">
+</head>
+
+<body>
+    <div data-sidebar>
+        <aside>
+            <a href="index.html" class="logo">
+                <img src="../assets/mascot.png" alt="" width="22" height="22">
+                husk
+            </a>
+            <nav>
+                <h6>Docs</h6>
+                <a href="index.html">Introduction</a>
+                <a href="usage.html">Usage</a>
+                <a href="components.html">Components</a>
+                <a href="demo.html">Demo</a>
+                <a href="customization.html" aria-current="page">Customization</a>
+
+                <h6>On this page</h6>
+                <a href="#theming">Quick theming</a>
+                <a href="#colors">Colors</a>
+                <a href="#typography">Typography</a>
+                <a href="#shape">Shape &amp; Radius</a>
+                <a href="#shadows">Shadows</a>
+                <a href="#dark-mode">Dark mode</a>
+                <a href="#all-tokens">All tokens</a>
+
+                <h6>Links</h6>
+                <a href="https://github.com/aryanjha256/husk">GitHub</a>
+                <a href="https://www.npmjs.com/package/husk-ui">npm</a>
+            </nav>
+        </aside>
+
+        <main>
+
+            <section>
+                <h1>Customization</h1>
+                <p>husk uses CSS custom properties for all design decisions. Override them on <code>:root</code> to
+                    theme
+                    everything at once.</p>
+            </section>
+
+            <!-- Quick theming -->
+            <section id="theming">
+                <h2>Quick theming</h2>
+                <p>Add a <code>&lt;style&gt;</code> block after the husk CSS import to override tokens:</p>
+                <pre><code>&lt;link rel="stylesheet" href="husk.css"&gt;
+&lt;style&gt;
+  :root {
+    --husk-accent: #e11d48;
+    --husk-radius: 8px;
+    --husk-font: "Inter", sans-serif;
+  }
+&lt;/style&gt;</code></pre>
+                <p>That's it. Every component that uses these tokens will update automatically — buttons, links, focus
+                    rings, progress bars, switches, and more.</p>
+            </section>
+
+            <!-- Colors -->
+            <section id="colors">
+                <h2>Colors</h2>
+                <p>The color system uses a small set of semantic tokens. Each semantic color has three variants: the
+                    base, a
+                    light background (<code>-bg</code>), and a dark foreground (<code>-fg</code>).</p>
+
+                <h3>Core</h3>
+                <table class="token-table">
+                    <thead>
+                        <tr>
+                            <th>Token</th>
+                            <th>Default</th>
+                            <th>Usage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>--husk-bg</td>
+                            <td><span class="swatch" style="background: #ffffff;"></span>#ffffff</td>
+                            <td>Page background</td>
+                        </tr>
+                        <tr>
+                            <td>--husk-fg</td>
+                            <td><span class="swatch" style="background: #37352f;"></span>#37352f</td>
+                            <td>Text color</td>
+                        </tr>
+                        <tr>
+                            <td>--husk-muted</td>
+                            <td><span class="swatch" style="background: #787774;"></span>#787774</td>
+                            <td>Secondary text, labels</td>
+                        </tr>
+                        <tr>
+                            <td>--husk-surface</td>
+                            <td><span class="swatch" style="background: #f7f6f3;"></span>#f7f6f3</td>
+                            <td>Card backgrounds, code blocks</td>
+                        </tr>
+                        <tr>
+                            <td>--husk-surface-hover</td>
+                            <td>rgba(55,53,47, 0.04)</td>
+                            <td>Hover state backgrounds</td>
+                        </tr>
+                        <tr>
+                            <td>--husk-accent</td>
+                            <td><span class="swatch" style="background: #2eaadc;"></span>#2eaadc</td>
+                            <td>Primary action color</td>
+                        </tr>
+                        <tr>
+                            <td>--husk-accent-hover</td>
+                            <td><span class="swatch" style="background: #2496c4;"></span>#2496c4</td>
+                            <td>Primary hover</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Borders</h3>
+                <table class="token-table">
+                    <thead>
+                        <tr>
+                            <th>Token</th>
+                            <th>Default</th>
+                            <th>Usage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>--husk-border</td>
+                            <td>rgba(55,53,47, 0.09)</td>
+                            <td>Subtle dividers (transparent)</td>
+                        </tr>
+                        <tr>
+                            <td>--husk-border-solid</td>
+                            <td><span class="swatch" style="background: #e9e9e7;"></span>#e9e9e7</td>
+                            <td>Input borders, solid lines</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Semantic colors</h3>
+                <table class="token-table">
+                    <thead>
+                        <tr>
+                            <th>Token</th>
+                            <th>Default</th>
+                            <th>Usage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>--husk-success</td>
+                            <td><span class="swatch" style="background: #4dab9a;"></span>#4dab9a</td>
+                            <td>Success base</td>
+                        </tr>
+                        <tr>
+                            <td>--husk-success-bg</td>
+                            <td>rgba(77,171,154, 0.08)</td>
+                            <td>Success background (badges, alerts)</td>
+                        </tr>
+                        <tr>
+                            <td>--husk-success-fg</td>
+                            <td><span class="swatch" style="background: #2b7a6b;"></span>#2b7a6b</td>
+                            <td>Success text / toast</td>
+                        </tr>
+                        <tr>
+                            <td>--husk-warning</td>
+                            <td><span class="swatch" style="background: #cb912f;"></span>#cb912f</td>
+                            <td>Warning base</td>
+                        </tr>
+                        <tr>
+                            <td>--husk-warning-bg</td>
+                            <td>rgba(203,145,47, 0.08)</td>
+                            <td>Warning background</td>
+                        </tr>
+                        <tr>
+                            <td>--husk-warning-fg</td>
+                            <td><span class="swatch" style="background: #9a6c1e;"></span>#9a6c1e</td>
+                            <td>Warning text / toast</td>
+                        </tr>
+                        <tr>
+                            <td>--husk-danger</td>
+                            <td><span class="swatch" style="background: #e16259;"></span>#e16259</td>
+                            <td>Danger base</td>
+                        </tr>
+                        <tr>
+                            <td>--husk-danger-bg</td>
+                            <td>rgba(225,98,89, 0.08)</td>
+                            <td>Danger background</td>
+                        </tr>
+                        <tr>
+                            <td>--husk-danger-fg</td>
+                            <td><span class="swatch" style="background: #c4443c;"></span>#c4443c</td>
+                            <td>Danger text / toast</td>
+                        </tr>
+                        <tr>
+                            <td>--husk-info</td>
+                            <td><span class="swatch" style="background: #529cca;"></span>#529cca</td>
+                            <td>Info base</td>
+                        </tr>
+                        <tr>
+                            <td>--husk-info-bg</td>
+                            <td>rgba(82,156,202, 0.08)</td>
+                            <td>Info background</td>
+                        </tr>
+                        <tr>
+                            <td>--husk-info-fg</td>
+                            <td><span class="swatch" style="background: #3a7ba8;"></span>#3a7ba8</td>
+                            <td>Info text / toast</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Typography -->
+            <section id="typography">
+                <h2>Typography</h2>
+                <table class="token-table">
+                    <thead>
+                        <tr>
+                            <th>Token</th>
+                            <th>Default</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>--husk-font</td>
+                            <td>-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif</td>
+                        </tr>
+                        <tr>
+                            <td>--husk-font-mono</td>
+                            <td>"SFMono-Regular", Menlo, Consolas, "PT Mono", monospace</td>
+                        </tr>
+                        <tr>
+                            <td>--husk-font-size</td>
+                            <td>16px</td>
+                        </tr>
+                        <tr>
+                            <td>--husk-leading</td>
+                            <td>1.5</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Override the font to use a custom typeface:</p>
+                <pre><code>:root {
+  --husk-font: "Inter", -apple-system, sans-serif;
+  --husk-font-mono: "JetBrains Mono", monospace;
+}</code></pre>
+            </section>
+
+            <!-- Shape -->
+            <section id="shape">
+                <h2>Shape &amp; Radius</h2>
+                <table class="token-table">
+                    <thead>
+                        <tr>
+                            <th>Token</th>
+                            <th>Default</th>
+                            <th>Usage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>--husk-radius-sm</td>
+                            <td>3px</td>
+                            <td>Small elements (badges, code)</td>
+                        </tr>
+                        <tr>
+                            <td>--husk-radius</td>
+                            <td>4px</td>
+                            <td>Default (buttons, inputs, cards)</td>
+                        </tr>
+                        <tr>
+                            <td>--husk-radius-lg</td>
+                            <td>6px</td>
+                            <td>Larger elements (toasts, dialogs)</td>
+                        </tr>
+                        <tr>
+                            <td>--husk-radius-full</td>
+                            <td>9999px</td>
+                            <td>Pills and circles</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Want fully rounded? Set all to the same value:</p>
+                <pre><code>:root {
+  --husk-radius: 9999px;
+  --husk-radius-sm: 9999px;
+  --husk-radius-lg: 9999px;
+}</code></pre>
+                <p>Want sharp corners?</p>
+                <pre><code>:root {
+  --husk-radius: 0;
+  --husk-radius-sm: 0;
+  --husk-radius-lg: 0;
+}</code></pre>
+            </section>
+
+            <!-- Shadows -->
+            <section id="shadows">
+                <h2>Shadows</h2>
+                <table class="token-table">
+                    <thead>
+                        <tr>
+                            <th>Token</th>
+                            <th>Usage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>--husk-shadow-sm</td>
+                            <td>Switch knobs, subtle elevation</td>
+                        </tr>
+                        <tr>
+                            <td>--husk-shadow</td>
+                            <td>Default card shadow</td>
+                        </tr>
+                        <tr>
+                            <td>--husk-shadow-md</td>
+                            <td>Toasts, dropdowns</td>
+                        </tr>
+                        <tr>
+                            <td>--husk-shadow-lg</td>
+                            <td>Modals, dialogs</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Disable all shadows:</p>
+                <pre><code>:root {
+  --husk-shadow-sm: none;
+  --husk-shadow: none;
+  --husk-shadow-md: none;
+  --husk-shadow-lg: none;
+}</code></pre>
+            </section>
+
+            <!-- Motion -->
+            <section id="motion">
+                <h2>Motion</h2>
+                <table class="token-table">
+                    <thead>
+                        <tr>
+                            <th>Token</th>
+                            <th>Default</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>--husk-ease</td>
+                            <td>120ms ease-out</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>For reduced motion or no transitions:</p>
+                <pre><code>:root {
+  --husk-ease: 0ms;
+}</code></pre>
+            </section>
+
+            <!-- Dark mode -->
+            <section id="dark-mode">
+                <h2>Dark mode</h2>
+                <p>husk respects <code>prefers-color-scheme: dark</code> automatically. All tokens are redefined in the
+                    dark
+                    media query — you don't need to do anything.</p>
+                <p>To override dark mode colors specifically:</p>
+                <pre><code>@media (prefers-color-scheme: dark) {
+  :root {
+    --husk-accent: #f472b6;
+    --husk-bg: #0f0f0f;
+  }
+}</code></pre>
+                <p>To force a specific mode regardless of system preference, set the tokens explicitly on your page and
+                    disable the automatic detection with <code>color-scheme</code>:</p>
+                <pre><code>/* Force light mode */
+:root {
+  color-scheme: light;
+}
+
+/* Force dark mode */
+:root {
+  color-scheme: dark;
+  --husk-bg: #191919;
+  --husk-fg: #ffffffcf;
+  /* ... override all dark tokens ... */
+}</code></pre>
+            </section>
+
+            <!-- All tokens reference -->
+            <section id="all-tokens">
+                <h2>All tokens</h2>
+                <p>Complete list of every <code>--husk-*</code> custom property.</p>
+                <table class="token-table">
+                    <thead>
+                        <tr>
+                            <th>Token</th>
+                            <th>Light</th>
+                            <th>Dark</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>--husk-bg</td>
+                            <td>#ffffff</td>
+                            <td>#191919</td>
+                        </tr>
+                        <tr>
+                            <td>--husk-fg</td>
+                            <td>#37352f</td>
+                            <td>#ffffffcf</td>
+                        </tr>
+                        <tr>
+                            <td>--husk-muted</td>
+                            <td>#787774</td>
+                            <td>#ffffff5e</td>
+                        </tr>
+                        <tr>
+                            <td>--husk-border</td>
+                            <td>rgba(55,53,47, .09)</td>
+                            <td>rgba(255,255,255, .07)</td>
+                        </tr>
+                        <tr>
+                            <td>--husk-border-solid</td>
+                            <td>#e9e9e7</td>
+                            <td>#2f2f2f</td>
+                        </tr>
+                        <tr>
+                            <td>--husk-accent</td>
+                            <td>#2eaadc</td>
+                            <td>#529cca</td>
+                        </tr>
+                        <tr>
+                            <td>--husk-accent-hover</td>
+                            <td>#2496c4</td>
+                            <td>#68aed4</td>
+                        </tr>
+                        <tr>
+                            <td>--husk-accent-text</td>
+                            <td>#ffffff</td>
+                            <td>#191919</td>
+                        </tr>
+                        <tr>
+                            <td>--husk-success</td>
+                            <td>#4dab9a</td>
+                            <td>(same)</td>
+                        </tr>
+                        <tr>
+                            <td>--husk-success-bg</td>
+                            <td>rgba(77,171,154, .08)</td>
+                            <td>rgba(77,171,154, .12)</td>
+                        </tr>
+                        <tr>
+                            <td>--husk-success-fg</td>
+                            <td>#2b7a6b</td>
+                            <td>#6bc5b5</td>
+                        </tr>
+                        <tr>
+                            <td>--husk-warning</td>
+                            <td>#cb912f</td>
+                            <td>(same)</td>
+                        </tr>
+                        <tr>
+                            <td>--husk-warning-bg</td>
+                            <td>rgba(203,145,47, .08)</td>
+                            <td>rgba(203,145,47, .12)</td>
+                        </tr>
+                        <tr>
+                            <td>--husk-warning-fg</td>
+                            <td>#9a6c1e</td>
+                            <td>#dfb564</td>
+                        </tr>
+                        <tr>
+                            <td>--husk-danger</td>
+                            <td>#e16259</td>
+                            <td>(same)</td>
+                        </tr>
+                        <tr>
+                            <td>--husk-danger-bg</td>
+                            <td>rgba(225,98,89, .08)</td>
+                            <td>rgba(225,98,89, .12)</td>
+                        </tr>
+                        <tr>
+                            <td>--husk-danger-fg</td>
+                            <td>#c4443c</td>
+                            <td>#e98a84</td>
+                        </tr>
+                        <tr>
+                            <td>--husk-info</td>
+                            <td>#529cca</td>
+                            <td>(same)</td>
+                        </tr>
+                        <tr>
+                            <td>--husk-info-bg</td>
+                            <td>rgba(82,156,202, .08)</td>
+                            <td>rgba(82,156,202, .12)</td>
+                        </tr>
+                        <tr>
+                            <td>--husk-info-fg</td>
+                            <td>#3a7ba8</td>
+                            <td>#7db8da</td>
+                        </tr>
+                        <tr>
+                            <td>--husk-surface</td>
+                            <td>#f7f6f3</td>
+                            <td>#ffffff08</td>
+                        </tr>
+                        <tr>
+                            <td>--husk-surface-hover</td>
+                            <td>rgba(55,53,47, .04)</td>
+                            <td>rgba(255,255,255, .04)</td>
+                        </tr>
+                        <tr>
+                            <td>--husk-font</td>
+                            <td colspan="2">System font stack</td>
+                        </tr>
+                        <tr>
+                            <td>--husk-font-mono</td>
+                            <td colspan="2">Monospace font stack</td>
+                        </tr>
+                        <tr>
+                            <td>--husk-font-size</td>
+                            <td colspan="2">16px</td>
+                        </tr>
+                        <tr>
+                            <td>--husk-leading</td>
+                            <td colspan="2">1.5</td>
+                        </tr>
+                        <tr>
+                            <td>--husk-radius-sm</td>
+                            <td colspan="2">3px</td>
+                        </tr>
+                        <tr>
+                            <td>--husk-radius</td>
+                            <td colspan="2">4px</td>
+                        </tr>
+                        <tr>
+                            <td>--husk-radius-lg</td>
+                            <td colspan="2">6px</td>
+                        </tr>
+                        <tr>
+                            <td>--husk-radius-full</td>
+                            <td colspan="2">9999px</td>
+                        </tr>
+                        <tr>
+                            <td>--husk-ease</td>
+                            <td colspan="2">120ms ease-out</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <div class="docs-footer">
+                <p>husk — MIT License. Built by <a href="https://github.com/aryanjha256">@aryanjha256</a></p>
+            </div>
+        </main>
+    </div>
+
+    <button class="mobile-menu"
+        onclick="this.closest('body').querySelector('[data-sidebar]').dataset.sidebar = this.closest('body').querySelector('[data-sidebar]').dataset.sidebar === 'open' ? '' : 'open'"
+        aria-label="Toggle menu">☰</button>
+</body>
+
+</html>

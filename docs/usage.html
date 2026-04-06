@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usage — husk</title>
+    <link rel="icon" type="image/png" href="../assets/mascot.png">
+    <link rel="stylesheet" href="../src/husk.css">
+    <link rel="stylesheet" href="docs.css">
+</head>
+
+<body>
+    <div data-sidebar>
+        <aside>
+            <a href="index.html" class="logo">
+                <img src="../assets/mascot.png" alt="" width="22" height="22">
+                husk
+            </a>
+            <nav>
+                <h6>Docs</h6>
+                <a href="index.html">Introduction</a>
+                <a href="usage.html" aria-current="page">Usage</a>
+                <a href="components.html">Components</a>
+                <a href="demo.html">Demo</a>
+                <a href="customization.html">Customization</a>
+                <h6>Links</h6>
+                <a href="https://github.com/aryanjha256/husk">GitHub</a>
+                <a href="https://www.npmjs.com/package/husk-ui">npm</a>
+            </nav>
+        </aside>
+
+        <main>
+
+            <section>
+                <h1>Usage</h1>
+                <p>husk is a CSS file that styles semantic HTML elements directly. No classes, no JavaScript framework,
+                    no
+                    build step. Write standard HTML and it looks good.</p>
+            </section>
+
+            <!-- Install -->
+            <section id="install">
+                <h2>Installation</h2>
+
+                <h3>CDN (fastest)</h3>
+                <p>Add one line to your HTML:</p>
+                <div class="demo">
+                    <pre
+                        class="demo-code"><code>&lt;link rel="stylesheet" href="https://unpkg.com/husk-ui@latest/dist/husk.css"&gt;</code></pre>
+                </div>
+
+                <h3>npm</h3>
+                <pre><code>npm install husk-ui</code></pre>
+                <p>Then import it:</p>
+                <pre><code>/* In your CSS */
+@import "husk-ui/css";
+
+/* Or link it in HTML */
+&lt;link rel="stylesheet" href="node_modules/husk-ui/dist/husk.css"&gt;</code></pre>
+
+                <h3>Download</h3>
+                <p>Download <a href="https://github.com/aryanjha256/husk/tree/main/dist">dist/husk.css</a> and drop it
+                    into
+                    your project. That's it.</p>
+            </section>
+
+            <!-- Starter template -->
+            <section id="template">
+                <h2>Starter template</h2>
+                <p>Copy this and you're ready to go:</p>
+                <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;link rel="stylesheet" href="https://unpkg.com/husk-ui@latest/dist/husk.css"&gt;
+    &lt;title&gt;My App&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;nav&gt;
+        &lt;strong&gt;My App&lt;/strong&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
+    &lt;main&gt;
+        &lt;h1&gt;Hello, world&lt;/h1&gt;
+        &lt;p&gt;This already looks good.&lt;/p&gt;
+        &lt;button&gt;Click me&lt;/button&gt;
+    &lt;/main&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </section>
+
+            <!-- JavaScript -->
+            <section id="javascript">
+                <h2>JavaScript (optional)</h2>
+                <p>husk is CSS-first. All layouts and components work without JavaScript. The optional JS file (~1.4 KB
+                    gzipped) adds two features:</p>
+                <ul>
+                    <li><strong>Toast notifications</strong> — <code>Husk.toast(message, options)</code></li>
+                    <li><strong>Dialog wiring</strong> — auto-connects <code>data-open</code> and
+                        <code>data-close</code>
+                        buttons to <code>&lt;dialog&gt;</code> elements</li>
+                </ul>
+                <pre><code>&lt;!-- Add before &lt;/body&gt; --&gt;
+&lt;script src="https://unpkg.com/husk-ui@latest/dist/husk.js"&gt;&lt;/script&gt;</code></pre>
+
+                <h3>Toast API</h3>
+                <pre><code>// Basic
+Husk.toast("Something happened");
+
+// With type
+Husk.toast("Saved!", { type: "success" });
+
+// Types: "success" | "danger" | "warning" | "info"
+
+// Custom duration (ms), default is 3000
+Husk.toast("Heads up", { type: "warning", duration: 5000 });
+
+// Manual dismiss (duration: 0)
+const t = Husk.toast("Loading...", { duration: 0 });
+t.dismiss(); // close it later</code></pre>
+
+                <h3>Dialog wiring</h3>
+                <p>Add <code>data-open="dialog-id"</code> to any button to open a dialog, and <code>data-close</code>
+                    inside
+                    the dialog to close it. Clicking the backdrop also closes it.</p>
+                <pre><code>&lt;button data-open="confirm"&gt;Delete&lt;/button&gt;
+
+&lt;dialog id="confirm"&gt;
+    &lt;h3&gt;Delete this item?&lt;/h3&gt;
+    &lt;p&gt;This cannot be undone.&lt;/p&gt;
+    &lt;menu&gt;
+        &lt;button data-close&gt;Cancel&lt;/button&gt;
+        &lt;button data-close data-variant="danger"&gt;Delete&lt;/button&gt;
+    &lt;/menu&gt;
+&lt;/dialog&gt;</code></pre>
+                <p>If you add dialogs dynamically, call <code>Husk.dialog.init()</code> to re-wire them.</p>
+            </section>
+
+            <!-- Modular imports -->
+            <section id="modular">
+                <h2>Modular imports</h2>
+                <p>Don't need everything? Import just what you use:</p>
+                <pre><code>&lt;!-- Foundation (required) --&gt;
+&lt;link rel="stylesheet" href="husk-ui/src/base.css"&gt;
+
+&lt;!-- Pick what you need --&gt;
+&lt;link rel="stylesheet" href="husk-ui/src/typography.css"&gt;
+&lt;link rel="stylesheet" href="husk-ui/src/forms.css"&gt;
+&lt;link rel="stylesheet" href="husk-ui/src/tables.css"&gt;
+
+&lt;!-- Individual components --&gt;
+&lt;link rel="stylesheet" href="husk-ui/src/components/card.css"&gt;
+&lt;link rel="stylesheet" href="husk-ui/src/components/dialog.css"&gt;
+&lt;link rel="stylesheet" href="husk-ui/src/components/badge.css"&gt;
+&lt;link rel="stylesheet" href="husk-ui/src/components/tooltip.css"&gt;
+&lt;!-- ... and so on --&gt;</code></pre>
+
+                <p>Available component files:</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>File</th>
+                            <th>What it styles</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>base.css</code></td>
+                            <td>Reset, design tokens, document defaults</td>
+                        </tr>
+                        <tr>
+                            <td><code>typography.css</code></td>
+                            <td>Headings, paragraphs, links, lists, code, blockquotes</td>
+                        </tr>
+                        <tr>
+                            <td><code>forms.css</code></td>
+                            <td>Inputs, buttons, selects, checkboxes, radios</td>
+                        </tr>
+                        <tr>
+                            <td><code>tables.css</code></td>
+                            <td>Tables with hover states</td>
+                        </tr>
+                        <tr>
+                            <td><code>components/card.css</code></td>
+                            <td><code>&lt;article&gt;</code> cards and grid</td>
+                        </tr>
+                        <tr>
+                            <td><code>components/dialog.css</code></td>
+                            <td><code>&lt;dialog&gt;</code> modals</td>
+                        </tr>
+                        <tr>
+                            <td><code>components/details.css</code></td>
+                            <td>Accordions and dropdowns</td>
+                        </tr>
+                        <tr>
+                            <td><code>components/nav.css</code></td>
+                            <td>Navigation bars</td>
+                        </tr>
+                        <tr>
+                            <td><code>components/toast.css</code></td>
+                            <td>Toast notification styling</td>
+                        </tr>
+                        <tr>
+                            <td><code>components/badge.css</code></td>
+                            <td><code>&lt;mark&gt;</code> badges</td>
+                        </tr>
+                        <tr>
+                            <td><code>components/progress.css</code></td>
+                            <td>Progress bars and meters</td>
+                        </tr>
+                        <tr>
+                            <td><code>components/tooltip.css</code></td>
+                            <td>Hover tooltips</td>
+                        </tr>
+                        <tr>
+                            <td><code>components/alert.css</code></td>
+                            <td>Alert callouts</td>
+                        </tr>
+                        <tr>
+                            <td><code>components/switch.css</code></td>
+                            <td>Toggle switches</td>
+                        </tr>
+                        <tr>
+                            <td><code>components/skeleton.css</code></td>
+                            <td>Loading skeletons</td>
+                        </tr>
+                        <tr>
+                            <td><code>components/sidebar.css</code></td>
+                            <td>Sidebar layouts</td>
+                        </tr>
+                        <tr>
+                            <td><code>components/spinner.css</code></td>
+                            <td>Loading spinners</td>
+                        </tr>
+                        <tr>
+                            <td><code>components/breadcrumb.css</code></td>
+                            <td>Breadcrumb navigation</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Browser support -->
+            <section id="browser-support">
+                <h2>Browser support</h2>
+                <p>husk uses standard CSS and HTML. It works in all modern browsers:</p>
+                <ul>
+                    <li>Chrome / Edge 88+</li>
+                    <li>Firefox 78+</li>
+                    <li>Safari 14+</li>
+                </ul>
+                <p>No polyfills required. Native <code>&lt;dialog&gt;</code>, <code>:has()</code>, and
+                    <code>color-scheme</code> are used where supported with graceful fallbacks.
+                </p>
+            </section>
+
+            <div class="docs-footer">
+                <p>husk — MIT License. Built by <a href="https://github.com/aryanjha256">@aryanjha256</a></p>
+            </div>
+        </main>
+    </div>
+
+    <button class="mobile-menu"
+        onclick="this.closest('body').querySelector('[data-sidebar]').dataset.sidebar = this.closest('body').querySelector('[data-sidebar]').dataset.sidebar === 'open' ? '' : 'open'"
+        aria-label="Toggle menu">☰</button>
+</body>
+
+</html>

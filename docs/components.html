@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Components — husk</title>
+    <link rel="icon" type="image/png" href="../assets/mascot.png">
+    <link rel="stylesheet" href="../src/husk.css">
+    <link rel="stylesheet" href="docs.css">
+</head>
+
+<body>
+    <div data-sidebar>
+        <aside>
+            <a href="index.html" class="logo">
+                <img src="../assets/mascot.png" alt="" width="22" height="22">
+                husk
+            </a>
+            <nav>
+                <h6>Docs</h6>
+                <a href="index.html">Introduction</a>
+                <a href="usage.html">Usage</a>
+                <a href="components.html" aria-current="page">Components</a>
+                <a href="demo.html">Demo</a>
+                <a href="customization.html">Customization</a>
+
+                <h6>Layout</h6>
+                <a href="#nav">Navigation</a>
+                <a href="#sidebar">Sidebar</a>
+                <a href="#breadcrumb">Breadcrumb</a>
+                <a href="#cards">Cards</a>
+
+                <h6>Forms</h6>
+                <a href="#forms">Inputs</a>
+                <a href="#buttons">Buttons</a>
+                <a href="#switch">Switch</a>
+
+                <h6>Feedback</h6>
+                <a href="#dialog">Modal</a>
+                <a href="#alerts">Callouts</a>
+                <a href="#toasts">Toast</a>
+                <a href="#badges">Badges</a>
+                <a href="#tooltips">Tooltip</a>
+                <a href="#progress">Progress</a>
+                <a href="#spinner">Spinner</a>
+                <a href="#skeleton">Skeleton</a>
+
+                <h6>Content</h6>
+                <a href="#accordion">Accordion</a>
+                <a href="#table">Table</a>
+                <a href="#typography">Typography</a>
+
+                <h6>Links</h6>
+                <a href="https://github.com/aryanjha256/husk">GitHub</a>
+                <a href="https://www.npmjs.com/package/husk-ui">npm</a>
+            </nav>
+        </aside>
+
+        <main>
+
+            <section>
+                <h1>Components</h1>
+                <p>Every component, live. Each one is styled from semantic HTML — no classes required.</p>
+            </section>
+
+            <!-- ===================== LAYOUT ===================== -->
+
+            <!-- Navigation -->
+            <section id="nav">
+                <h2>Navigation</h2>
+                <p>A <code>&lt;nav&gt;</code> with a <code>&lt;ul&gt;</code>. Add <code>aria-current="page"</code> for
+                    the
+                    active link.</p>
+                <div class="demo">
+                    <div class="demo-preview">
+                        <nav>
+                            <strong>App</strong>
+                            <ul>
+                                <li><a href="#" aria-current="page">Home</a></li>
+                                <li><a href="#">About</a></li>
+                                <li><a href="#">Settings</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <pre class="demo-code"><code>&lt;nav&gt;
+    &lt;strong&gt;App&lt;/strong&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#" aria-current="page"&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Settings&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+                </div>
+            </section>
+
+            <!-- Sidebar -->
+            <section id="sidebar">
+                <h2>Sidebar</h2>
+                <p>Wrap your layout in <code>[data-sidebar]</code>. Put an <code>&lt;aside&gt;</code> and a
+                    <code>&lt;main&gt;</code> inside.
+                </p>
+                <div class="demo">
+                    <pre class="demo-code"><code>&lt;div data-sidebar&gt;
+    &lt;aside&gt;
+        &lt;nav&gt;
+            &lt;h6&gt;Menu&lt;/h6&gt;
+            &lt;a href="#" aria-current="page"&gt;Dashboard&lt;/a&gt;
+            &lt;a href="#"&gt;Settings&lt;/a&gt;
+            &lt;a href="#"&gt;Users&lt;/a&gt;
+        &lt;/nav&gt;
+    &lt;/aside&gt;
+    &lt;main&gt;
+        &lt;h1&gt;Dashboard&lt;/h1&gt;
+        &lt;p&gt;Content goes here.&lt;/p&gt;
+    &lt;/main&gt;
+&lt;/div&gt;
+
+&lt;!-- Collapsed sidebar --&gt;
+&lt;div data-sidebar="collapsed"&gt;...&lt;/div&gt;
+
+&lt;!-- Mobile: toggle with data-sidebar="open" --&gt;</code></pre>
+                </div>
+                <p><small>The sidebar is sticky, responsive (overlay on mobile), and 240px wide by default.</small></p>
+            </section>
+
+            <!-- Breadcrumb -->
+            <section id="breadcrumb">
+                <h2>Breadcrumb</h2>
+                <p>Use <code>&lt;nav aria-label="breadcrumb"&gt;</code> with an <code>&lt;ol&gt;</code>.</p>
+                <div class="demo">
+                    <div class="demo-preview">
+                        <nav aria-label="breadcrumb">
+                            <ol>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Projects</a></li>
+                                <li><a href="#">husk</a></li>
+                                <li aria-current="page">Settings</li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <pre class="demo-code"><code>&lt;nav aria-label="breadcrumb"&gt;
+    &lt;ol&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Projects&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;husk&lt;/a&gt;&lt;/li&gt;
+        &lt;li aria-current="page"&gt;Settings&lt;/li&gt;
+    &lt;/ol&gt;
+&lt;/nav&gt;</code></pre>
+                </div>
+            </section>
+
+            <!-- Cards -->
+            <section id="cards">
+                <h2>Cards</h2>
+                <p><code>&lt;article&gt;</code> becomes a card. Wrap in <code>[data-cards]</code> for a responsive grid.
+                </p>
+                <div class="demo">
+                    <div class="demo-preview">
+                        <div data-cards>
+                            <article>
+                                <header>
+                                    <h4>Quick start</h4>
+                                </header>
+                                <p>Copy one file. Write HTML. Done.</p>
+                                <footer>
+                                    <button data-size="sm">Get started</button>
+                                </footer>
+                            </article>
+                            <article>
+                                <header>
+                                    <h4>Modular</h4>
+                                </header>
+                                <p>Import everything or just what you need.</p>
+                                <footer>
+                                    <mark data-type="success">Opt-in</mark>
+                                </footer>
+                            </article>
+                        </div>
+                    </div>
+                    <pre class="demo-code"><code>&lt;div data-cards&gt;
+    &lt;article&gt;
+        &lt;header&gt;&lt;h4&gt;Title&lt;/h4&gt;&lt;/header&gt;
+        &lt;p&gt;Description&lt;/p&gt;
+        &lt;footer&gt;
+            &lt;button data-size="sm"&gt;Action&lt;/button&gt;
+        &lt;/footer&gt;
+    &lt;/article&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+            </section>
+
+            <!-- ===================== FORMS ===================== -->
+
+            <!-- Form Inputs -->
+            <section id="forms">
+                <h2>Form Inputs</h2>
+                <p>Standard form elements — styled automatically.</p>
+                <div class="demo">
+                    <div class="demo-preview" style="max-width: 24rem;">
+                        <label for="d-name">Name</label>
+                        <input type="text" id="d-name" placeholder="Enter your name">
+
+                        <label for="d-email">Email</label>
+                        <input type="email" id="d-email" placeholder="you@example.com">
+
+                        <label for="d-bio">Bio</label>
+                        <textarea id="d-bio" placeholder="Tell us about yourself"></textarea>
+
+                        <label for="d-role">Role</label>
+                        <select id="d-role">
+                            <option value="">Choose...</option>
+                            <option>Designer</option>
+                            <option>Developer</option>
+                            <option>Manager</option>
+                        </select>
+
+                        <fieldset>
+                            <legend>Preferences</legend>
+                            <label><input type="checkbox" checked> Email notifications</label>
+                            <label><input type="checkbox"> Weekly digest</label>
+                        </fieldset>
+
+                        <label>Access level</label>
+                        <label><input type="radio" name="access" checked> Public</label>
+                        <label><input type="radio" name="access"> Private</label>
+                    </div>
+                    <pre class="demo-code"><code>&lt;label for="name"&gt;Name&lt;/label&gt;
+&lt;input type="text" id="name" placeholder="Enter your name"&gt;
+
+&lt;label for="bio"&gt;Bio&lt;/label&gt;
+&lt;textarea id="bio"&gt;&lt;/textarea&gt;
+
+&lt;label for="role"&gt;Role&lt;/label&gt;
+&lt;select id="role"&gt;
+    &lt;option&gt;Designer&lt;/option&gt;
+    &lt;option&gt;Developer&lt;/option&gt;
+&lt;/select&gt;
+
+&lt;fieldset&gt;
+    &lt;legend&gt;Preferences&lt;/legend&gt;
+    &lt;label&gt;&lt;input type="checkbox"&gt; Option&lt;/label&gt;
+&lt;/fieldset&gt;</code></pre>
+                </div>
+            </section>
+
+            <!-- Buttons -->
+            <section id="buttons">
+                <h2>Buttons</h2>
+                <p>Plain <code>&lt;button&gt;</code> elements. Use <code>data-variant</code> and <code>data-size</code>
+                    for
+                    variations.</p>
+                <div class="demo">
+                    <div class="demo-preview">
+                        <h6>Variants</h6>
+                        <div class="row" style="margin-bottom: 1rem;">
+                            <button>Primary</button>
+                            <button data-variant="secondary">Secondary</button>
+                            <button data-variant="outline">Outline</button>
+                            <button data-variant="ghost">Ghost</button>
+                            <button data-variant="danger">Danger</button>
+                            <button disabled>Disabled</button>
+                        </div>
+                        <h6>Sizes</h6>
+                        <div class="row">
+                            <button data-size="sm">Small</button>
+                            <button>Default</button>
+                            <button data-size="lg">Large</button>
+                        </div>
+                    </div>
+                    <pre class="demo-code"><code>&lt;button&gt;Primary&lt;/button&gt;
+&lt;button data-variant="secondary"&gt;Secondary&lt;/button&gt;
+&lt;button data-variant="outline"&gt;Outline&lt;/button&gt;
+&lt;button data-variant="ghost"&gt;Ghost&lt;/button&gt;
+&lt;button data-variant="danger"&gt;Danger&lt;/button&gt;
+
+&lt;button data-size="sm"&gt;Small&lt;/button&gt;
+&lt;button&gt;Default&lt;/button&gt;
+&lt;button data-size="lg"&gt;Large&lt;/button&gt;
+
+&lt;!-- Links as buttons --&gt;
+&lt;a href="#" role="button"&gt;Link button&lt;/a&gt;</code></pre>
+                </div>
+            </section>
+
+            <!-- Switch -->
+            <section id="switch">
+                <h2>Switch</h2>
+                <p>Add <code>data-switch</code> to a checkbox.</p>
+                <div class="demo">
+                    <div class="demo-preview">
+                        <div style="display: flex; flex-direction: column; gap: 10px;">
+                            <label style="display: flex; align-items: center; gap: 8px;">
+                                <input type="checkbox" data-switch checked> Notifications
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 8px;">
+                                <input type="checkbox" data-switch> Dark mode
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 8px;">
+                                <input type="checkbox" data-switch disabled> Disabled
+                            </label>
+                        </div>
+                    </div>
+                    <pre class="demo-code"><code>&lt;label&gt;
+    &lt;input type="checkbox" data-switch checked&gt; Notifications
+&lt;/label&gt;
+
+&lt;label&gt;
+    &lt;input type="checkbox" data-switch disabled&gt; Disabled
+&lt;/label&gt;</code></pre>
+                </div>
+            </section>
+
+            <!-- ===================== FEEDBACK ===================== -->
+
+            <!-- Modal / Dialog -->
+            <section id="dialog">
+                <h2>Modal</h2>
+                <p>Native <code>&lt;dialog&gt;</code> element. Use <code>data-open</code> and <code>data-close</code> to
+                    wire triggers (requires JS).</p>
+                <div class="demo">
+                    <div class="demo-preview">
+                        <button data-open="docs-dialog">Open modal</button>
+                        <dialog id="docs-dialog">
+                            <h3>Publish changes?</h3>
+                            <p>Your changes will be pushed to production immediately.</p>
+                            <menu>
+                                <button data-close data-variant="secondary">Cancel</button>
+                                <button data-close onclick="Husk.toast('Published!', {type:'success'})">Publish</button>
+                            </menu>
+                        </dialog>
+                    </div>
+                    <pre class="demo-code"><code>&lt;button data-open="my-dialog"&gt;Open modal&lt;/button&gt;
+
+&lt;dialog id="my-dialog"&gt;
+    &lt;h3&gt;Title&lt;/h3&gt;
+    &lt;p&gt;Content here.&lt;/p&gt;
+    &lt;menu&gt;
+        &lt;button data-close&gt;Cancel&lt;/button&gt;
+        &lt;button data-close&gt;Confirm&lt;/button&gt;
+    &lt;/menu&gt;
+&lt;/dialog&gt;</code></pre>
+                </div>
+            </section>
+
+            <!-- Alerts -->
+            <section id="alerts">
+                <h2>Callouts</h2>
+                <p>Use <code>role="alert"</code> with <code>data-type</code> for Notion-style callout blocks.</p>
+                <div class="demo">
+                    <div class="demo-preview" style="max-width: 28rem;">
+                        <div role="alert" data-type="info">
+                            <div><strong>Pro tip</strong>
+                                <p>husk works with any static site generator.</p>
+                            </div>
+                        </div>
+                        <div role="alert" data-type="success">
+                            <div><strong>Deployed</strong>
+                                <p>Your changes are live.</p>
+                            </div>
+                        </div>
+                        <div role="alert" data-type="warning">
+                            <div><strong>Heads up</strong>
+                                <p>JS is optional. Only needed for toasts and dialog wiring.</p>
+                            </div>
+                        </div>
+                        <div role="alert" data-type="danger">
+                            <div><strong>Breaking change</strong>
+                                <p>v0.2 renames <code>--husk-color</code> to <code>--husk-accent</code>.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <pre class="demo-code"><code>&lt;div role="alert" data-type="info"&gt;
+    &lt;div&gt;
+        &lt;strong&gt;Title&lt;/strong&gt;
+        &lt;p&gt;Description text.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Types: info, success, warning, danger --&gt;</code></pre>
+                </div>
+            </section>
+
+            <!-- Toasts -->
+            <section id="toasts">
+                <h2>Toast</h2>
+                <p>Call <code>Husk.toast(message, options)</code>. Requires the JS file.</p>
+                <div class="demo">
+                    <div class="demo-preview">
+                        <div class="row">
+                            <button onclick="Husk.toast('Something happened')">Default</button>
+                            <button onclick="Husk.toast('Saved!', {type:'success'})">Success</button>
+                            <button onclick="Husk.toast('Check input', {type:'warning'})">Warning</button>
+                            <button onclick="Husk.toast('Connection lost', {type:'danger'})">Danger</button>
+                            <button onclick="Husk.toast('Update ready', {type:'info'})">Info</button>
+                        </div>
+                    </div>
+                    <pre class="demo-code"><code>Husk.toast("Something happened");
+Husk.toast("Saved!", { type: "success" });
+Husk.toast("Error", { type: "danger", duration: 5000 });</code></pre>
+                </div>
+            </section>
+
+            <!-- Badges -->
+            <section id="badges">
+                <h2>Badges</h2>
+                <p><code>&lt;mark&gt;</code> becomes a badge. Add <code>data-type</code> for color variants.</p>
+                <div class="demo">
+                    <div class="demo-preview">
+                        <div class="row">
+                            <mark>Default</mark>
+                            <mark data-type="success">Published</mark>
+                            <mark data-type="warning">Draft</mark>
+                            <mark data-type="danger">Archived</mark>
+                            <mark data-type="info">New</mark>
+                            <mark data-type="neutral">v0.1.0</mark>
+                        </div>
+                    </div>
+                    <pre class="demo-code"><code>&lt;mark&gt;Default&lt;/mark&gt;
+&lt;mark data-type="success"&gt;Published&lt;/mark&gt;
+&lt;mark data-type="warning"&gt;Draft&lt;/mark&gt;
+&lt;mark data-type="danger"&gt;Archived&lt;/mark&gt;
+&lt;mark data-type="info"&gt;New&lt;/mark&gt;
+&lt;mark data-type="neutral"&gt;v0.1.0&lt;/mark&gt;</code></pre>
+                </div>
+            </section>
+
+            <!-- Tooltips -->
+            <section id="tooltips">
+                <h2>Tooltip</h2>
+                <p>Add <code>data-tooltip</code> to any element. Use <code>data-tooltip-pos="bottom"</code> for bottom
+                    placement.</p>
+                <div class="demo">
+                    <div class="demo-preview">
+                        <div class="row">
+                            <button data-tooltip="Copy to clipboard">Hover me</button>
+                            <button data-variant="secondary" data-tooltip="Opens in new tab"
+                                data-tooltip-pos="bottom">Bottom tooltip</button>
+                        </div>
+                    </div>
+                    <pre class="demo-code"><code>&lt;button data-tooltip="Copy to clipboard"&gt;Hover me&lt;/button&gt;
+&lt;button data-tooltip="Bottom" data-tooltip-pos="bottom"&gt;Below&lt;/button&gt;</code></pre>
+                </div>
+            </section>
+
+            <!-- Progress -->
+            <section id="progress">
+                <h2>Progress</h2>
+                <p>Native <code>&lt;progress&gt;</code> and <code>&lt;meter&gt;</code> elements.</p>
+                <div class="demo">
+                    <div class="demo-preview" style="max-width: 24rem;">
+                        <label>Upload — 72%</label>
+                        <progress value="72" max="100"></progress>
+                        <label>Storage — 40%</label>
+                        <progress value="40" max="100"></progress>
+                        <label>Battery</label>
+                        <meter min="0" max="100" low="20" high="80" optimum="90" value="75"></meter>
+                    </div>
+                    <pre class="demo-code"><code>&lt;progress value="72" max="100"&gt;&lt;/progress&gt;
+&lt;meter min="0" max="100" low="20" high="80" optimum="90" value="75"&gt;&lt;/meter&gt;</code></pre>
+                </div>
+            </section>
+
+            <!-- Spinner -->
+            <section id="spinner">
+                <h2>Spinner</h2>
+                <p>Add <code>data-loading</code> to overlay a spinner on any element, or use <code>data-spinner</code>
+                    for a
+                    standalone spinner.</p>
+                <div class="demo">
+                    <div class="demo-preview">
+                        <div class="row gap-md">
+                            <span data-spinner="sm"></span>
+                            <span data-spinner></span>
+                            <span data-spinner="lg"></span>
+                            <button data-loading style="min-width: 6rem;">Save</button>
+                        </div>
+                    </div>
+                    <pre class="demo-code"><code>&lt;!-- Standalone spinners --&gt;
+&lt;span data-spinner="sm"&gt;&lt;/span&gt;
+&lt;span data-spinner&gt;&lt;/span&gt;
+&lt;span data-spinner="lg"&gt;&lt;/span&gt;
+
+&lt;!-- Loading overlay on a button --&gt;
+&lt;button data-loading&gt;Save&lt;/button&gt;</code></pre>
+                </div>
+            </section>
+
+            <!-- Skeleton -->
+            <section id="skeleton">
+                <h2>Skeleton</h2>
+                <p>Add <code>data-skeleton</code> to any element for a shimmer loading placeholder.</p>
+                <div class="demo">
+                    <div class="demo-preview" style="max-width: 24rem;">
+                        <article>
+                            <header>
+                                <div data-skeleton
+                                    style="width: 3rem; height: 3rem; border-radius: var(--husk-radius-full);"></div>
+                                <h4 data-skeleton style="width: 60%; height: 1rem; margin-top: 0.5rem;">&nbsp;</h4>
+                            </header>
+                            <p data-skeleton="text" style="width: 100%; height: 0.875rem; margin-bottom: 6px;">&nbsp;
+                            </p>
+                            <p data-skeleton="text" style="width: 80%; height: 0.875rem;">&nbsp;</p>
+                        </article>
+                    </div>
+                    <pre class="demo-code"><code>&lt;div data-skeleton style="width: 3rem; height: 3rem;
+    border-radius: var(--husk-radius-full);"&gt;&lt;/div&gt;
+
+&lt;p data-skeleton="text" style="width: 60%; height: 1rem;"&gt;&lt;/p&gt;
+
+&lt;!-- Shapes: default (rectangle), "circle", "text" --&gt;</code></pre>
+                </div>
+            </section>
+
+            <!-- ===================== CONTENT ===================== -->
+
+            <!-- Accordion -->
+            <section id="accordion">
+                <h2>Accordion &amp; Dropdown</h2>
+                <p><code>&lt;details&gt;</code> / <code>&lt;summary&gt;</code> — Notion-style collapsible toggles.</p>
+                <div class="demo">
+                    <div class="demo-preview" style="max-width: 24rem;">
+                        <details open>
+                            <summary>What is husk?</summary>
+                            <p>A CSS library that styles HTML elements directly.</p>
+                        </details>
+                        <details>
+                            <summary>Do I need JavaScript?</summary>
+                            <p>No. JS is optional — only for toasts and dialog helpers.</p>
+                        </details>
+                        <details>
+                            <summary>How do I customize?</summary>
+                            <p>Override <code>--husk-*</code> custom properties.</p>
+                        </details>
+                    </div>
+                    <pre class="demo-code"><code>&lt;details open&gt;
+    &lt;summary&gt;Question&lt;/summary&gt;
+    &lt;p&gt;Answer&lt;/p&gt;
+&lt;/details&gt;</code></pre>
+                </div>
+
+                <h3>Dropdown</h3>
+                <p>Add <code>data-dropdown</code> to <code>&lt;details&gt;</code> for a popover menu.</p>
+                <div class="demo">
+                    <div class="demo-preview">
+                        <details data-dropdown>
+                            <summary>Actions</summary>
+                            <ul>
+                                <li><a href="#">Edit</a></li>
+                                <li><a href="#">Duplicate</a></li>
+                                <li><a href="#">Move to</a></li>
+                                <li><a href="#" style="color: var(--husk-danger);">Delete</a></li>
+                            </ul>
+                        </details>
+                    </div>
+                    <pre class="demo-code"><code>&lt;details data-dropdown&gt;
+    &lt;summary&gt;Actions&lt;/summary&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Edit&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Delete&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/details&gt;</code></pre>
+                </div>
+            </section>
+
+            <!-- Table -->
+            <section id="table">
+                <h2>Table</h2>
+                <p>Standard <code>&lt;table&gt;</code> with clean borders and hover rows.</p>
+                <div class="demo">
+                    <div class="demo-preview">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Role</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Aryan</td>
+                                    <td>Owner</td>
+                                    <td><mark data-type="success">Active</mark></td>
+                                </tr>
+                                <tr>
+                                    <td>Sarah</td>
+                                    <td>Editor</td>
+                                    <td><mark data-type="warning">Away</mark></td>
+                                </tr>
+                                <tr>
+                                    <td>Mike</td>
+                                    <td>Viewer</td>
+                                    <td><mark data-type="neutral">Offline</mark></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <pre class="demo-code"><code>&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;&lt;th&gt;Name&lt;/th&gt;&lt;th&gt;Status&lt;/th&gt;&lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;Aryan&lt;/td&gt;&lt;td&gt;Active&lt;/td&gt;&lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+                </div>
+            </section>
+
+            <!-- Typography -->
+            <section id="typography">
+                <h2>Typography</h2>
+                <p>All text elements are styled out of the box.</p>
+
+                <div class="demo">
+                    <div class="demo-preview">
+                        <h1>Heading 1</h1>
+                        <h2>Heading 2</h2>
+                        <h3>Heading 3</h3>
+                        <h4>Heading 4</h4>
+                        <h5>Heading 5</h5>
+                        <h6>Heading 6</h6>
+                    </div>
+                </div>
+
+                <h3>Inline elements</h3>
+                <div class="demo">
+                    <div class="demo-preview">
+                        <p>
+                            Regular text with <a href="#">a link</a>, <strong>bold</strong>, <em>italic</em>,
+                            <code>inline code</code>, and <kbd>Ctrl</kbd> + <kbd>S</kbd> keyboard shortcuts.
+                        </p>
+                    </div>
+                    <pre class="demo-code"><code>&lt;a href="#"&gt;Link&lt;/a&gt;
+&lt;strong&gt;Bold&lt;/strong&gt;
+&lt;code&gt;inline code&lt;/code&gt;
+&lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;S&lt;/kbd&gt;</code></pre>
+                </div>
+
+                <h3>Blockquote</h3>
+                <div class="demo">
+                    <div class="demo-preview">
+                        <blockquote>
+                            <p>The best CSS framework is the one you don't notice.</p>
+                            <cite>Everyone who's been burned by CSS</cite>
+                        </blockquote>
+                    </div>
+                    <pre class="demo-code"><code>&lt;blockquote&gt;
+    &lt;p&gt;Quote text here.&lt;/p&gt;
+    &lt;cite&gt;Attribution&lt;/cite&gt;
+&lt;/blockquote&gt;</code></pre>
+                </div>
+
+                <h3>Code block</h3>
+                <div class="demo">
+                    <div class="demo-preview">
+                        <pre><code>function deploy(app) {
+  return fetch('/api/deploy', {
+    method: 'POST',
+    body: JSON.stringify({ app }),
+  });
+}</code></pre>
+                    </div>
+                    <pre class="demo-code"><code>&lt;pre&gt;&lt;code&gt;function deploy(app) {
+  // your code
+}&lt;/code&gt;&lt;/pre&gt;</code></pre>
+                </div>
+
+                <h3>Lists</h3>
+                <div class="demo">
+                    <div class="demo-preview">
+                        <ul>
+                            <li>Unordered item</li>
+                            <li>Nested items
+                                <ul>
+                                    <li>Like this</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ol>
+                            <li>First</li>
+                            <li>Second</li>
+                            <li>Third</li>
+                        </ol>
+                        <dl>
+                            <dt>HTML</dt>
+                            <dd>The structure</dd>
+                            <dt>CSS</dt>
+                            <dd>The style</dd>
+                        </dl>
+                    </div>
+                </div>
+            </section>
+
+            <div class="docs-footer">
+                <p>husk — MIT License. Built by <a href="https://github.com/aryanjha256">@aryanjha256</a></p>
+            </div>
+        </main>
+    </div>
+
+    <button class="mobile-menu"
+        onclick="this.closest('body').querySelector('[data-sidebar]').dataset.sidebar = this.closest('body').querySelector('[data-sidebar]').dataset.sidebar === 'open' ? '' : 'open'"
+        aria-label="Toggle menu">☰</button>
+
+    <script src="../src/js/toast.js"></script>
+    <script src="../src/js/dialog.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>husk — Write HTML. Ship design.</title>
+    <meta name="description"
+        content="Ultra-lightweight CSS library that styles semantic HTML. No classes, no build step, ~6 KB gzipped.">
+    <link rel="icon" type="image/png" href="../assets/mascot.png">
+    <link rel="stylesheet" href="../src/husk.css">
+    <link rel="stylesheet" href="docs.css">
+    <style>
+        .hero {
+            padding-top: 1rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            letter-spacing: -0.04em;
+            line-height: 1.1;
+            max-width: 32rem;
+        }
+
+        .hero .tagline {
+            font-size: 1.0625rem;
+            color: var(--husk-muted);
+            max-width: 36rem;
+        }
+
+        .stats {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .stats div strong {
+            display: block;
+            font-size: 1.25rem;
+            letter-spacing: -0.02em;
+        }
+
+        .stats div small {
+            color: var(--husk-muted);
+        }
+
+        .compare {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            max-width: 32rem;
+        }
+
+        .compare>div {
+            padding: 14px;
+            border-radius: var(--husk-radius);
+            font-size: 0.8125rem;
+            font-family: var(--husk-font-mono);
+            line-height: 1.6;
+        }
+
+        .compare .them {
+            background: var(--husk-surface);
+            color: var(--husk-muted);
+        }
+
+        .compare .us {
+            background: rgba(46, 170, 220, 0.06);
+            color: var(--husk-accent);
+        }
+
+        @media (max-width: 36rem) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .compare {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div data-sidebar>
+        <aside>
+            <a href="index.html" class="logo">
+                <img src="../assets/mascot.png" alt="" width="22" height="22">
+                husk
+            </a>
+            <nav>
+                <h6>Docs</h6>
+                <a href="index.html" aria-current="page">Introduction</a>
+                <a href="usage.html">Usage</a>
+                <a href="components.html">Components</a>
+                <a href="demo.html">Demo</a>
+                <a href="customization.html">Customization</a>
+                <h6>Links</h6>
+                <a href="https://github.com/aryanjha256/husk">GitHub</a>
+                <a href="https://www.npmjs.com/package/husk-ui">npm</a>
+            </nav>
+        </aside>
+
+        <main>
+            <section class="hero">
+                <img src="../assets/mascot.png" alt="husk" width="56" height="56"
+                    style="border-radius: var(--husk-radius-lg); margin-bottom: 1rem;">
+                <h1>Write HTML.<br>Ship something that looks designed.</h1>
+                <p class="tagline">
+                    A tiny CSS file that styles semantic HTML directly. No classes to memorize,
+                    no build step, no framework. Drop it in and go.
+                </p>
+                <div class="row" style="margin-top: 1rem;">
+                    <a href="usage.html" role="button">Get started</a>
+                    <a href="demo.html" role="button" data-variant="secondary">Live demo</a>
+                    <a href="https://github.com/aryanjha256/husk" role="button" data-variant="ghost">GitHub →</a>
+                </div>
+                <div class="stats">
+                    <div><strong>~6 KB</strong><small>gzipped</small></div>
+                    <div><strong>0</strong><small>dependencies</small></div>
+                    <div><strong>0</strong><small>classes</small></div>
+                    <div><strong>18</strong><small>components</small></div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Less markup, same result</h2>
+                <div class="compare">
+                    <div class="them">
+                        <h6>Others</h6>
+                        &lt;button class="bg-blue-500<br>
+                        &nbsp; text-white font-medium<br>
+                        &nbsp; py-2 px-4 rounded"&gt;<br>
+                        &nbsp; Click me<br>
+                        &lt;/button&gt;
+                    </div>
+                    <div class="us">
+                        <h6>husk</h6>
+                        &lt;button&gt;Click me&lt;/button&gt;
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>How it works</h2>
+                <p>husk styles the semantic HTML elements you already know. No classes, no wrapper divs.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>HTML</th>
+                            <th>What you get</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>&lt;button&gt;</code></td>
+                            <td>Styled button with variants via <code>data-variant</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;article&gt;</code></td>
+                            <td>Card with border and hover</td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;dialog&gt;</code></td>
+                            <td>Modal with backdrop</td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;details&gt;</code></td>
+                            <td>Accordion / dropdown</td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;mark&gt;</code></td>
+                            <td>Badge with color variants</td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;progress&gt;</code></td>
+                            <td>Progress bar</td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;table&gt;</code></td>
+                            <td>Clean table with hover rows</td>
+                        </tr>
+                        <tr>
+                            <td><code>[data-tooltip]</code></td>
+                            <td>Hover tooltip</td>
+                        </tr>
+                        <tr>
+                            <td><code>[data-switch]</code></td>
+                            <td>Toggle switch</td>
+                        </tr>
+                        <tr>
+                            <td><code>[data-loading]</code></td>
+                            <td>Spinner overlay</td>
+                        </tr>
+                        <tr>
+                            <td><code>[data-skeleton]</code></td>
+                            <td>Shimmer loading placeholder</td>
+                        </tr>
+                        <tr>
+                            <td><code>[data-sidebar]</code></td>
+                            <td>Sidebar layout (like this page)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="margin-top: 1rem;"><a href="components.html">See all 18 components →</a></p>
+            </section>
+
+            <section>
+                <h2>Quick taste</h2>
+                <pre><code>&lt;link rel="stylesheet" href="https://unpkg.com/husk-ui@latest/dist/husk.css"&gt;</code></pre>
+                <div class="row" style="margin-top: 1rem;">
+                    <button onclick="Husk.toast('Saved!', {type:'success'})">Try a toast</button>
+                    <button data-variant="secondary" data-open="demo-dialog">Open modal</button>
+                    <button data-variant="outline" data-tooltip="This is a tooltip">Hover for tooltip</button>
+                </div>
+                <div class="row" style="margin-top: 0.5rem;">
+                    <mark>Default</mark>
+                    <mark data-type="success">Success</mark>
+                    <mark data-type="warning">Warning</mark>
+                    <mark data-type="danger">Danger</mark>
+                    <mark data-type="info">Info</mark>
+                </div>
+
+                <dialog id="demo-dialog">
+                    <h3>Are you sure?</h3>
+                    <p>This will publish your changes to production.</p>
+                    <menu>
+                        <button data-close data-variant="secondary">Cancel</button>
+                        <button data-close onclick="Husk.toast('Published!', {type:'success'})">Publish</button>
+                    </menu>
+                </dialog>
+            </section>
+
+            <div class="docs-footer">
+                <p>husk — MIT License. Built by <a href="https://github.com/aryanjha256">@aryanjha256</a></p>
+            </div>
+        </main>
+    </div>
+
+    <button class="mobile-menu"
+        onclick="this.closest('body').querySelector('[data-sidebar]').dataset.sidebar = this.closest('body').querySelector('[data-sidebar]').dataset.sidebar === 'open' ? '' : 'open'"
+        aria-label="Toggle menu">☰</button>
+
+    <script src="../src/js/toast.js"></script>
+    <script src="../src/js/dialog.js"></script>
+</body>
+
+</html>
